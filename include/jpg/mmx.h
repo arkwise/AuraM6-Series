@@ -1,0 +1,2 @@
+
+#define JPGALLEG_MMX

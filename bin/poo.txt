@@ -1,0 +1,1719 @@
+Message: Starting log to /syslogd.txt on Wed Aug 25 02:08:10 2021
+	doscore 2007-2020
+		KERNEL: Aura Kernel  VERSION: 0.5.8.0
+			DJGPP Release
+
+Message: Command: c:/bin/main.exe
+Message: Aura System initialization
+Message: Initializing DynLd...
+Warning: Duplicate symbol: makecol_depth orignaly registered by 0
+Warning: Duplicate symbol: calloc orignaly registered by 0
+Warning: Duplicate symbol: qsort orignaly registered by 0
+Warning: Duplicate symbol: exp orignaly registered by 0
+Warning: Duplicate symbol: floor orignaly registered by 0
+Message: DynLd initialized
+Message: Initialize VFS...
+Message: MsDosFileDriver=2cf464
+Message: Drive a:\ mapped as /a/
+Message: Drive c:\ mapped as /c/
+Message: Drive z:\ mapped as /z/
+Message: VFS Initialized
+Message: Initializing registry...
+Message: Loading registry...
+Message: Try to open ./system/settings.dat (file: system/settings.dat, Mode: rb)...
+Message: Opened (Size: 5984, adress of TFILE: 2841624)!
+Message: Registry loaded
+Message: Registry initialized
+Message: Initializing text manipulation functions...
+Message:   ASCII/UTF-8...
+Message:   UTF-16...
+Message: Text manipulation functions initialized
+Message: Initialize Events System...
+Message: Events System Initialized
+Message: Install Allegro...
+Message: Allegro installed
+Message: Initialize DMS v2 (Data Management System) ...
+Warning: Duplicate symbol: DMS2InstallIcons orignaly registered by 0
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : Ignore next warning message
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : New codec 00000007 : (null) ((null),(null),00000000)
+Message: DMS2 : Sub codec GenericText (into 00000007)
+Message: DMS2 : New gateway from codec 00000007 -> to data type 00000007
+Warning: DMS2 : Codec 7 do not support data type 7
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : Ignore next warning message
+Warning: DMS2 : Codec 44796e4c not loaded
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : New codec 44796e4c : (null) ((null),(null),00000000)
+Message: DMS2 : New gateway from codec 44796e4c -> to data type 44796e4c
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : Sub codec GenericBinary (into 44796e4c)
+Warning: DMS2 : Codec 44796e4c do not support data type ffffffff
+Message: DMS2 : Ignore next warning message
+Warning: DMS2 : Codec 44457865 not loaded
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : New codec 44457865 : (null) ((null),(null),00000000)
+Message: DMS2 : New gateway from codec 44457865 -> to data type 44457865
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : Sub codec GenericBinary (into 44457865)
+Warning: DMS2 : Codec 44457865 do not support data type ffffffff
+Message: DMS2 : Ignore next warning message
+Warning: DMS2 : Codec 44697220 not loaded
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : New codec 44697220 : (null) ((null),(null),00000000)
+Message: DMS2 : Sub codec /system/SYSTEM/ICONS/folder16.bmp (into 44697220)
+Message: DMS2 : Sub codec /system/SYSTEM/ICONS/folder32.bmp (into 44697220)
+Message: DMS2 : New gateway from codec 44697220 -> to data type 44697220
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : Ignore next warning message
+Warning: DMS2 : Codec 48444420 not loaded
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : New codec 48444420 : (null) ((null),(null),00000000)
+Message: DMS2 : Sub codec /system/SYSTEM/ICONS/drive16.bmp (into 48444420)
+Message: DMS2 : Sub codec /system/SYSTEM/ICONS/drive32.bmp (into 48444420)
+Message: DMS2 : New gateway from codec 48444420 -> to data type 44697220
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : Ignore next warning message
+Warning: DMS2 : Codec 00000001 not loaded
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : New codec 00000001 : (null) ((null),(null),00000000)
+Message: DMS2 : Sub codec GenericText (into 00000001)
+Message: DMS2 : Sub codec GenericBinary (into 00000001)
+Warning: DMS2 : Codec 1 do not support data type ffffffff
+Message: DMS2 : File extention 'ln' -> Codec 00000007
+Message: DMS2 : File extention 'dl' -> Codec 44796e4c
+Message: DMS2 : File extention 'app' -> Codec 44796e4c
+Message: DMS2 : File extention 'exe' -> Codec 44457865
+Message: DMS2 : File extention 'com' -> Codec 44457865
+Message: DMS2 : File extention '&folder' -> Codec 44697220
+Message: DMS2 : File extention '&hdd' -> Codec 48444420
+Message: DMS2 : File extention 'txt' -> Codec 00000001
+Message: DMS2 : File extention 'res' -> Codec 444d5352
+Message: DMS2 : New codec 444d5352 : oZone DMS ressource file (res,binary/ressource,00000006)
+Warning: DMS2 : Codec 444d5352 do not support data type 6
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS initialized
+Message: Initialize basic external drivers...
+Message: Run registry entries form /SYSTEM/BASICDRIVERS
+Message: Try to open ./xlib/bmp.dl (file: xlib/bmp.dl, Mode: rb)...
+Message: Opened (Size: 12952, adress of TFILE: 2841336)!
+Message: Loading application 'BMP loader/saver'(2e9db4), FileName - 'xlib/bmp.dl'
+Message:          UID - 'bmp' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: Loading LibMain of BMP.dl
+Message: DMS2 : File extention 'bmp' -> Codec 424d5020
+Message: DMS2 : New codec 424d5020 : Windows BMP (load OS/2) (bmp,image/bmp,00000003)
+Warning: DMS2 : Codec 424d5020 do not support data type 3
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : File extention 'cur' -> Codec 43555220
+Message: DMS2 : New codec 43555220 : Windows Cursors (untested) (cur,image/cur,00000005)
+Warning: DMS2 : Codec 43555220 do not support data type 5
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: Try to open ./xlib/png.dl (file: xlib/png.dl, Mode: rb)...
+Message: Opened (Size: 246923, adress of TFILE: 2841336)!
+Message: Loading application 'libpng + ldpng'(2ec7bc), FileName - 'xlib/png.dl'
+Message:          UID - 'png' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: DMS2 : File extention 'png' -> Codec 504e4720
+Message: DMS2 : New codec 504e4720 : Portable Network Graphic (.png) (png,image/png,00000003)
+Warning: DMS2 : Codec 504e4720 do not support data type 3
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: Try to open ./xlib/jpg.dl (file: xlib/jpg.dl, Mode: rb)...
+Message: Opened (Size: 114391, adress of TFILE: 2841336)!
+Message: Loading application 'JPG (Alleg) loader/saver'(3255cc), FileName - 'xlib/jpg.dl'
+Message:          UID - 'jpg' Version - 0x02020001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: DMS2 : File extention 'jpg' -> Codec 4a504720
+Message: DMS2 : New codec 4a504720 : JPEG (jpg,image/jpeg,00000003)
+Warning: DMS2 : Codec 4a504720 do not support data type 3
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: External basic drivers initialized successfully
+Message: Install screen...
+Message: Initializing screen by these parameters:
+Message: - Width:		1024
+Message: - Height:		768
+Message: - Depth:		16
+Message: - Refresh Rate:		60
+Message: Installing screen...
+ERROR: Could not set requested refresh rate, using 0Hz instead
+Message: DMS2 : Load file system/start.png using codec 504e4720 to type 00000003
+Message: Try to load system/start.png...
+Message: Try to open ./system/start.png (file: system/start.png, Mode: rb)...
+Message: Opened (Size: 277158, adress of TFILE: 2841528)!
+Message: DMS2 : Load file system/start.png 
+Message: Screen initialized successfully
+Message: Initialize Timer ...
+Message: Timer initialized
+Message: Add system fonts...
+Message: All system fonts successfully added
+Message: Install keyboard driver...
+Warning: REGISTRY : Unknow key /SYSTEM/KEYBOARD/LAYOUT
+Message: Keyboard driver installed successfully.
+Message: Install mouse driver...
+Message: DMS2 : Load file SYSTEM/CURSORS/ARROW.BMP using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/CURSORS/ARROW.BMP (file: SYSTEM/CURSORS/ARROW.BMP, Mode: rb)...
+Message: Opened (Size: 882, adress of TFILE: 2841416)!
+Message: DMS2 : Load file SYSTEM/CURSORS/ARROW.BMP 
+Message: DMS2 : Load file SYSTEM/CURSORS/RESIZE.BMP using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/CURSORS/RESIZE.BMP (file: SYSTEM/CURSORS/RESIZE.BMP, Mode: rb)...
+Message: Opened (Size: 774, adress of TFILE: 2841416)!
+Message: DMS2 : Load file SYSTEM/CURSORS/RESIZE.BMP 
+Message: Mouse driver installed successfully.
+Message: Initializing Socket ...
+Message: Socket Initialized ...
+Message: Initialize drivers
+Message: Run registry entries form /SYSTEM/DRIVERS
+Message: Try to open ./xlib/grfx.dl (file: xlib/grfx.dl, Mode: rb)...
+Message: Opened (Size: 15454, adress of TFILE: 2841336)!
+Message: Loading application 'Graphics Extender'(2e8eb4), FileName - 'xlib/grfx.dl'
+Message:          UID - 'grfx' Version - 0x00050000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: Try to open ./xlib/clipbrd.dl (file: xlib/clipbrd.dl, Mode: rb)...
+Message: Opened (Size: 861, adress of TFILE: 2841336)!
+Message: Loading application 'Clipboard'(348fbc), FileName - 'xlib/clipbrd.dl'
+Message:          UID - 'clipbrd' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: Try to open ./xlib/sound.dl (file: xlib/sound.dl, Mode: rb)...
+Message: Opened (Size: 6213, adress of TFILE: 2841336)!
+Message: Loading application 'Sound System'(34932c), FileName - 'xlib/sound.dl'
+Message:          UID - 'sound' Version - 0x00000000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: Installing sound system...
+Message: Try to initialise hardware
+Message: Volume set to 255
+Message: Midi Volume set to 255
+Message: Sound system installed
+Message: Drivers initialized successfully
+Message: Load libraries...
+Message: Run registry entries form /SYSTEM/AUTOLIB
+Message: Try to open ./xlib/skin.dl (file: xlib/skin.dl, Mode: rb)...
+Message: Opened (Size: 8712, adress of TFILE: 2841336)!
+Message: Loading application 'Skin System'(5584e0), FileName - 'xlib/skin.dl'
+Message:          UID - 'skin' Version - 0x01050200
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: Trying to load skin file - ./SYSTEM/SKINS/ozone.ini
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/winface.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/winface.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/winface.bmp (file: ./SYSTEM/SKINS/ozone/winface.bmp, Mode: rb)...
+Message: Opened (Size: 536954, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/winface.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/wintact.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/wintact.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/wintact.bmp (file: ./SYSTEM/SKINS/ozone/wintact.bmp, Mode: rb)...
+Message: Opened (Size: 21782, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/wintact.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/wintpas.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/wintpas.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/wintpas.bmp (file: ./SYSTEM/SKINS/ozone/wintpas.bmp, Mode: rb)...
+Message: Opened (Size: 21782, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/wintpas.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/closeup.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/closeup.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/closeup.bmp (file: ./SYSTEM/SKINS/ozone/closeup.bmp, Mode: rb)...
+Message: Opened (Size: 1118, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/closeup.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/closedn.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/closedn.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/closedn.bmp (file: ./SYSTEM/SKINS/ozone/closedn.bmp, Mode: rb)...
+Message: Opened (Size: 1118, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/closedn.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/maxup.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/maxup.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/maxup.bmp (file: ./SYSTEM/SKINS/ozone/maxup.bmp, Mode: rb)...
+Message: Opened (Size: 1118, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/maxup.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/maxdn.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/maxdn.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/maxdn.bmp (file: ./SYSTEM/SKINS/ozone/maxdn.bmp, Mode: rb)...
+Message: Opened (Size: 1118, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/maxdn.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/minup.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/minup.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/minup.bmp (file: ./SYSTEM/SKINS/ozone/minup.bmp, Mode: rb)...
+Message: Opened (Size: 1118, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/minup.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/mindn.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/mindn.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/mindn.bmp (file: ./SYSTEM/SKINS/ozone/mindn.bmp, Mode: rb)...
+Message: Opened (Size: 1118, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/mindn.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/btnover.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/btnover.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/btnover.bmp (file: ./SYSTEM/SKINS/ozone/btnover.bmp, Mode: rb)...
+Message: Opened (Size: 2430, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/btnover.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/button.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/button.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/button.bmp (file: ./SYSTEM/SKINS/ozone/button.bmp, Mode: rb)...
+Message: Opened (Size: 7614, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/button.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/btnclick.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/btnclick.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/btnclick.bmp (file: ./SYSTEM/SKINS/ozone/btnclick.bmp, Mode: rb)...
+Message: Opened (Size: 5654, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/btnclick.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/btndis.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/btndis.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/btndis.bmp (file: ./SYSTEM/SKINS/ozone/btndis.bmp, Mode: rb)...
+Message: Opened (Size: 7614, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/btndis.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/chkclr.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/chkclr.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/chkclr.bmp (file: ./SYSTEM/SKINS/ozone/chkclr.bmp, Mode: rb)...
+Message: Opened (Size: 1094, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/chkclr.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/chkckd.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/chkckd.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/chkckd.bmp (file: ./SYSTEM/SKINS/ozone/chkckd.bmp, Mode: rb)...
+Message: Opened (Size: 1094, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/chkckd.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/textbox.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/textbox.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/textbox.bmp (file: ./SYSTEM/SKINS/ozone/textbox.bmp, Mode: rb)...
+Message: Opened (Size: 2054, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/textbox.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbvbg.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvbg.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbvbg.bmp (file: ./SYSTEM/SKINS/ozone/sbvbg.bmp, Mode: rb)...
+Message: Opened (Size: 390, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvbg.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbvupup.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvupup.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbvupup.bmp (file: ./SYSTEM/SKINS/ozone/sbvupup.bmp, Mode: rb)...
+Message: Opened (Size: 486, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvupup.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbvupdn.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvupdn.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbvupdn.bmp (file: ./SYSTEM/SKINS/ozone/sbvupdn.bmp, Mode: rb)...
+Message: Opened (Size: 486, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvupdn.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbvdnup.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvdnup.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbvdnup.bmp (file: ./SYSTEM/SKINS/ozone/sbvdnup.bmp, Mode: rb)...
+Message: Opened (Size: 486, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvdnup.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbvdndn.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvdndn.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbvdndn.bmp (file: ./SYSTEM/SKINS/ozone/sbvdndn.bmp, Mode: rb)...
+Message: Opened (Size: 486, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvdndn.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbvtr.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvtr.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbvtr.bmp (file: ./SYSTEM/SKINS/ozone/sbvtr.bmp, Mode: rb)...
+Message: Opened (Size: 9270, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbvtr.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbhbg.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhbg.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbhbg.bmp (file: ./SYSTEM/SKINS/ozone/sbhbg.bmp, Mode: rb)...
+Message: Opened (Size: 414, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhbg.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbhlfup.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhlfup.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbhlfup.bmp (file: ./SYSTEM/SKINS/ozone/sbhlfup.bmp, Mode: rb)...
+Message: Opened (Size: 486, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhlfup.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbhlfdn.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhlfdn.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbhlfdn.bmp (file: ./SYSTEM/SKINS/ozone/sbhlfdn.bmp, Mode: rb)...
+Message: Opened (Size: 486, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhlfdn.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbhrgup.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhrgup.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbhrgup.bmp (file: ./SYSTEM/SKINS/ozone/sbhrgup.bmp, Mode: rb)...
+Message: Opened (Size: 486, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhrgup.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbhrgdn.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhrgdn.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbhrgdn.bmp (file: ./SYSTEM/SKINS/ozone/sbhrgdn.bmp, Mode: rb)...
+Message: Opened (Size: 486, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhrgdn.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sbhtr.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhtr.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sbhtr.bmp (file: ./SYSTEM/SKINS/ozone/sbhtr.bmp, Mode: rb)...
+Message: Opened (Size: 9270, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sbhtr.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/groupbox.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/groupbox.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/groupbox.bmp (file: ./SYSTEM/SKINS/ozone/groupbox.bmp, Mode: rb)...
+Message: Opened (Size: 3590, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/groupbox.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sliderbg.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sliderbg.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sliderbg.bmp (file: ./SYSTEM/SKINS/ozone/sliderbg.bmp, Mode: rb)...
+Message: Opened (Size: 1314, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sliderbg.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sliderln.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sliderln.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sliderln.bmp (file: ./SYSTEM/SKINS/ozone/sliderln.bmp, Mode: rb)...
+Message: Opened (Size: 134, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sliderln.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/sliderbt.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sliderbt.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/sliderbt.bmp (file: ./SYSTEM/SKINS/ozone/sliderbt.bmp, Mode: rb)...
+Message: Opened (Size: 1494, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/sliderbt.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/listview.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/listview.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/listview.bmp (file: ./SYSTEM/SKINS/ozone/listview.bmp, Mode: rb)...
+Message: Opened (Size: 2054, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/listview.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/listview.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/listview.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/listview.bmp (file: ./SYSTEM/SKINS/ozone/listview.bmp, Mode: rb)...
+Message: Opened (Size: 2054, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/listview.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/progbar.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/progbar.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/progbar.bmp (file: ./SYSTEM/SKINS/ozone/progbar.bmp, Mode: rb)...
+Message: Opened (Size: 630, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/progbar.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/progbg.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/progbg.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/progbg.bmp (file: ./SYSTEM/SKINS/ozone/progbg.bmp, Mode: rb)...
+Message: Opened (Size: 414, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/progbg.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/listview.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/listview.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/listview.bmp (file: ./SYSTEM/SKINS/ozone/listview.bmp, Mode: rb)...
+Message: Opened (Size: 2054, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/listview.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/toolbar.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/toolbar.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/toolbar.bmp (file: ./SYSTEM/SKINS/ozone/toolbar.bmp, Mode: rb)...
+Message: Opened (Size: 6134, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/toolbar.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/meviewbg.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/meviewbg.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/meviewbg.bmp (file: ./SYSTEM/SKINS/ozone/meviewbg.bmp, Mode: rb)...
+Message: Opened (Size: 374, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/meviewbg.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/menusel.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/menusel.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/menusel.bmp (file: ./SYSTEM/SKINS/ozone/menusel.bmp, Mode: rb)...
+Message: Opened (Size: 3662, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/menusel.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/menubg.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/menubg.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/menubg.bmp (file: ./SYSTEM/SKINS/ozone/menubg.bmp, Mode: rb)...
+Message: Opened (Size: 4854, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/menubg.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/menusel.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/menusel.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/menusel.bmp (file: ./SYSTEM/SKINS/ozone/menusel.bmp, Mode: rb)...
+Message: Opened (Size: 3662, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/menusel.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/combo.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/combo.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/combo.bmp (file: ./SYSTEM/SKINS/ozone/combo.bmp, Mode: rb)...
+Message: Opened (Size: 11574, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/combo.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/winresiz.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/winresiz.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/winresiz.bmp (file: ./SYSTEM/SKINS/ozone/winresiz.bmp, Mode: rb)...
+Message: Opened (Size: 774, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/winresiz.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/tabbg.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/tabbg.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/tabbg.bmp (file: ./SYSTEM/SKINS/ozone/tabbg.bmp, Mode: rb)...
+Message: Opened (Size: 6134, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/tabbg.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/tabopen.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/tabopen.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/tabopen.bmp (file: ./SYSTEM/SKINS/ozone/tabopen.bmp, Mode: rb)...
+Message: Opened (Size: 3974, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/tabopen.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/tabclose.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/tabclose.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/tabclose.bmp (file: ./SYSTEM/SKINS/ozone/tabclose.bmp, Mode: rb)...
+Message: Opened (Size: 4422, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/tabclose.bmp 
+Message: Skin - Load Image - Path: ./SYSTEM/SKINS/ , File: ozone/tabcont.bmp
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/tabcont.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/SKINS/ozone/tabcont.bmp (file: ./SYSTEM/SKINS/ozone/tabcont.bmp, Mode: rb)...
+Message: Opened (Size: 84642, adress of TFILE: 2840728)!
+Message: DMS2 : Load file ./SYSTEM/SKINS/ozone/tabcont.bmp 
+Message: Skin system loaded a total of '49' skin items
+Message: Try to open ./xlib/widget.dl (file: xlib/widget.dl, Mode: rb)...
+Message: Opened (Size: 66964, adress of TFILE: 2841336)!
+Message: Loading application 'Widget System'(55f320), FileName - 'xlib/widget.dl'
+Message:          UID - 'widget' Version - 0x00020000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: DMS2 : File extention 'oiw' -> Codec 69576467
+Message: DMS2 : New codec 69576467 : oZone irreal widget (iWidget) (oiw,application/ozone-iwidget,00000010)
+Warning: DMS2 : Codec 69576467 do not support data type 10
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: CreateWidgetClass 0
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : Load file SYSTEM/CURSORS/drag.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/CURSORS/drag.bmp (file: SYSTEM/CURSORS/drag.bmp, Mode: rb)...
+Message: Opened (Size: 1674, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/CURSORS/drag.bmp 
+Message: DMS2 : Load file SYSTEM/CURSORS/nodrag.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/CURSORS/nodrag.bmp (file: SYSTEM/CURSORS/nodrag.bmp, Mode: rb)...
+Message: Opened (Size: 1614, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/CURSORS/nodrag.bmp 
+Message: DMS2 : Load file SYSTEM/CURSORS/dragcopy.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/CURSORS/dragcopy.bmp (file: SYSTEM/CURSORS/dragcopy.bmp, Mode: rb)...
+Message: Opened (Size: 1890, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/CURSORS/dragcopy.bmp 
+Message: CreateWidgetClass 7a53706c
+Message: CreateWidgetClass 5653706c
+Message: CreateWidgetClass 4853706c
+Message: Try to open ./xlib/button.dl (file: xlib/button.dl, Mode: rb)...
+Message: Opened (Size: 4740, adress of TFILE: 2841336)!
+Message: Loading application 'Button Widget'(5745d0), FileName - 'xlib/button.dl'
+Message:          UID - 'button' Version - 0x000a0000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 42746e20
+Message: Try to open ./xlib/label.dl (file: xlib/label.dl, Mode: rb)...
+Message: Opened (Size: 3177, adress of TFILE: 2841336)!
+Message: Loading application 'Label Widget'(583ed0), FileName - 'xlib/label.dl'
+Message:          UID - 'label' Version - 0x00020000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 4c626c20
+Message: CreateWidgetClass 4c626c49
+Message: Try to open ./xlib/progress.dl (file: xlib/progress.dl, Mode: rb)...
+Message: Opened (Size: 2878, adress of TFILE: 2841336)!
+Message: Loading application 'Progressbar Widget'(5746f0), FileName - 'xlib/progress.dl'
+Message:          UID - 'progress' Version - 0x00090000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 50726773
+Message: Try to open ./xlib/checkbox.dl (file: xlib/checkbox.dl, Mode: rb)...
+Message: Opened (Size: 2907, adress of TFILE: 2841336)!
+Message: Loading application 'Checkbox Widget'(574950), FileName - 'xlib/checkbox.dl'
+Message:          UID - 'checkbox' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 43686b42
+Message: Try to open ./xlib/menu.dl (file: xlib/menu.dl, Mode: rb)...
+Message: Opened (Size: 13568, adress of TFILE: 2841336)!
+Message: Loading application 'Menu Widget'(564738), FileName - 'xlib/menu.dl'
+Message:          UID - 'menu' Version - 0x00030000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 4d656e75
+Message: Try to open ./xlib/canvas.dl (file: xlib/canvas.dl, Mode: rb)...
+Message: Opened (Size: 603, adress of TFILE: 2841336)!
+Message: Loading application 'Canvas widget'(567000), FileName - 'xlib/canvas.dl'
+Message:          UID - 'canvas' Version - 0x00080000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: Try to open ./xlib/scrllbar.dl (file: xlib/scrllbar.dl, Mode: rb)...
+Message: Opened (Size: 14791, adress of TFILE: 2841336)!
+Message: Loading application 'Scrollbar Widget'(5672c0), FileName - 'xlib/scrllbar.dl'
+Message:          UID - 'scrllbar' Version - 0x00010000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 536c5767
+Message: CreateWidgetClass 7853636c
+Message: Try to open ./xlib/textbox.dl (file: xlib/textbox.dl, Mode: rb)...
+Message: Opened (Size: 13933, adress of TFILE: 2841336)!
+Message: Loading application 'Textbox Widget'(5980b0), FileName - 'xlib/textbox.dl'
+Message:          UID - 'textbox' Version - 0x00010100
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 54787442
+Message: Try to open ./xlib/window.dl (file: xlib/window.dl, Mode: rb)...
+Message: Opened (Size: 23215, adress of TFILE: 2841336)!
+Message: Loading application 'Window Widget'(552a70), FileName - 'xlib/window.dl'
+Message:          UID - 'window' Version - 0x05000000
+Message: Try to open ./xlib/mp3.dl (file: xlib/mp3.dl, Mode: rb)...
+Message: Opened (Size: 234989, adress of TFILE: 2841000)!
+Message: Loading application 'MP3 loader (Allegro MP3)'(5af028), FileName - 'xlib/mp3.dl'
+Message:          UID - 'mp3' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: DMS2 : File extention 'mp3' -> Codec 4d503320
+Message: DMS2 : New codec 4d503320 : MP3 loader (mp3,audio/mp3,00000009)
+Warning: DMS2 : Codec 4d503320 do not support data type 9
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 57696e20
+Message: DMS2 : Load file SYSTEM/ICONS/app16.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/app16.bmp (file: SYSTEM/ICONS/app16.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841064)!
+Message: DMS2 : Load file SYSTEM/ICONS/app16.bmp 
+Message: DMS2 : Load file SYSTEM/ICONS/msg01.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/msg01.bmp (file: SYSTEM/ICONS/msg01.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841064)!
+Message: DMS2 : Load file SYSTEM/ICONS/msg01.bmp 
+Message: DMS2 : Load file SYSTEM/ICONS/msg02.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/msg02.bmp (file: SYSTEM/ICONS/msg02.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841064)!
+Message: DMS2 : Load file SYSTEM/ICONS/msg02.bmp 
+Message: DMS2 : Load file SYSTEM/ICONS/msg03.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/msg03.bmp (file: SYSTEM/ICONS/msg03.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841064)!
+Message: DMS2 : Load file SYSTEM/ICONS/msg03.bmp 
+Message: DMS2 : Load file SYSTEM/ICONS/msg04.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/msg04.bmp (file: SYSTEM/ICONS/msg04.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841064)!
+Message: DMS2 : Load file SYSTEM/ICONS/msg04.bmp 
+Message: Try to open ./xlib/listbox.dl (file: xlib/listbox.dl, Mode: rb)...
+Message: Opened (Size: 3917, adress of TFILE: 2841336)!
+Message: Loading application 'Listbox Widget'(594928), FileName - 'xlib/listbox.dl'
+Message:          UID - 'listbox' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 4c737442
+Message: Try to open ./xlib/treeview.dl (file: xlib/treeview.dl, Mode: rb)...
+Message: Opened (Size: 18890, adress of TFILE: 2841336)!
+Message: Loading application 'Treeview Widget'(597bd8), FileName - 'xlib/treeview.dl'
+Message:          UID - 'treeview' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 54726556
+Message: Try to open ./xlib/groupbox.dl (file: xlib/groupbox.dl, Mode: rb)...
+Message: Opened (Size: 2029, adress of TFILE: 2841336)!
+Message: Loading application 'Groupbox Widget'(554248), FileName - 'xlib/groupbox.dl'
+Message:          UID - 'groupbox' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 47727042
+Message: Try to open ./xlib/slider.dl (file: xlib/slider.dl, Mode: rb)...
+Message: Opened (Size: 3686, adress of TFILE: 2841336)!
+Message: Loading application 'Slider Widget'(594f80), FileName - 'xlib/slider.dl'
+Message:          UID - 'slider' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 536c6472
+Message: Try to open ./xlib/listview.dl (file: xlib/listview.dl, Mode: rb)...
+Message: Opened (Size: 19839, adress of TFILE: 2841336)!
+Message: Loading application 'Listview Widget'(5951e0), FileName - 'xlib/listview.dl'
+Message:          UID - 'listview' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 4c737456
+Message: Try to open ./xlib/combobox.dl (file: xlib/combobox.dl, Mode: rb)...
+Message: Opened (Size: 4729, adress of TFILE: 2841336)!
+Message: Loading application 'Combobox widget'(599560), FileName - 'xlib/combobox.dl'
+Message:          UID - 'combobox' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 436d6242
+Message: Try to open ./xlib/toolbar.dl (file: xlib/toolbar.dl, Mode: rb)...
+Message: Opened (Size: 3027, adress of TFILE: 2841336)!
+Message: Loading application 'Toolbar Widget'(553388), FileName - 'xlib/toolbar.dl'
+Message:          UID - 'toolbar' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 546c4272
+Message: Try to open ./xlib/fms2.dl (file: xlib/fms2.dl, Mode: rb)...
+Message: Opened (Size: 20208, adress of TFILE: 2841336)!
+Message: Loading application 'File Management System v2'(7c70e8), FileName - 'xlib/fms2.dl'
+Message:          UID - 'fms2' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: DMS2 : Load file /system/SYSTEM/ICONS/folder16.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/folder16.bmp (file: SYSTEM/ICONS/folder16.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841048)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/folder16.bmp 
+Message: DMS2 : Load file /system/SYSTEM/ICONS/folder32.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/folder32.bmp (file: SYSTEM/ICONS/folder32.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841048)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/folder32.bmp 
+Message: DMS2 : Load file /system/SYSTEM/ICONS/drive16.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/drive16.bmp (file: SYSTEM/ICONS/drive16.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841048)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/drive16.bmp 
+Message: DMS2 : Load file /system/SYSTEM/ICONS/drive32.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/drive32.bmp (file: SYSTEM/ICONS/drive32.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841048)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/drive32.bmp 
+Message: FMS2 : DTE ffffffff 'Unknown binary'
+Message: FMS2 :     ffffffff : New action 'Open with...' (0) -> 'Applications/openwth.app'
+Message: FMS2 : DTE 44796e4c 'DynLd executable'
+Message: FMS2 :     44796e4c : New action 'Execute' (100) -> Internal 007c7288
+Warning: NULL pointer at TextDup.t
+Message: FMS2 : DTE 44457865 'Dos execultable'
+Message: DMS2 : Load file /system/SYSTEM/ICONS/app16.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/app16.bmp (file: SYSTEM/ICONS/app16.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841016)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/app16.bmp 
+Message: DMS2 : Load file /system/SYSTEM/ICONS/app32.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/app32.bmp (file: SYSTEM/ICONS/app32.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841016)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/app32.bmp 
+Message: FMS2 :     44457865 : New action 'Execute' (0) -> '/system/xapps/rundos.app'
+Message: FMS2 : DTE 44697220 'Directory'
+Message: DMS2 : Load file /system/SYSTEM/ICONS/folder16.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/folder16.bmp (file: SYSTEM/ICONS/folder16.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841016)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/folder16.bmp 
+Message: DMS2 : Load file /system/SYSTEM/ICONS/folder32.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/folder32.bmp (file: SYSTEM/ICONS/folder32.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841016)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/folder32.bmp 
+Message: FMS2 :     44697220 : New action 'Open' (0) -> '/system/xapps/nav.app'
+Message: FMS2 : DTE 00000003 'Image'
+Message: DMS2 : Load file /system/SYSTEM/ICONS/img16.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/img16.bmp (file: SYSTEM/ICONS/img16.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841016)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/img16.bmp 
+Message: DMS2 : Load file /system/SYSTEM/ICONS/img32.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/img32.bmp (file: SYSTEM/ICONS/img32.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841016)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/img32.bmp 
+Message: FMS2 :     00000003 : New action 'Open' (0) -> '/system/xapps/immagine.app'
+Message: FMS2 : DTE 00000001 'Text'
+Message: DMS2 : Load file /system/SYSTEM/ICONS/txt16.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/txt16.bmp (file: SYSTEM/ICONS/txt16.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841016)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/txt16.bmp 
+Message: DMS2 : Load file /system/SYSTEM/ICONS/txt32.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/txt32.bmp (file: SYSTEM/ICONS/txt32.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841016)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/txt32.bmp 
+Message: FMS2 :     00000001 : New action 'Open' (0) -> '/system/xapps/o3pad.app'
+Message: FMS2 : DTE 00000006 'Ressource'
+Message: DMS2 : Load file /system/SYSTEM/ICONS/res16.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/res16.bmp (file: SYSTEM/ICONS/res16.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841016)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/res16.bmp 
+Message: DMS2 : Load file /system/SYSTEM/ICONS/res32.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/res32.bmp (file: SYSTEM/ICONS/res32.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841016)!
+Message: DMS2 : Load file /system/SYSTEM/ICONS/res32.bmp 
+Message: FMS2 :     00000006 : New action 'Open' (0) -> '/system/xapps/resedit.app'
+Message: Try to open ./xlib/iodlg.dl (file: xlib/iodlg.dl, Mode: rb)...
+Message: Opened (Size: 28015, adress of TFILE: 2841336)!
+Message: Loading application 'I/O Dialogs'(84d788), FileName - 'xlib/iodlg.dl'
+Message:          UID - 'iodlg' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 44725677
+Message: CreateWidgetClass 44547256
+Message: DMS2 : Load file SYSTEM/ICONS/folpar32.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/folpar32.bmp (file: SYSTEM/ICONS/folpar32.bmp, Mode: rb)...
+Message: Opened (Size: 3126, adress of TFILE: 2841064)!
+Message: DMS2 : Load file SYSTEM/ICONS/folpar32.bmp 
+Message: DMS2 : Load file SYSTEM/ICONS/folpar16.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/folpar16.bmp (file: SYSTEM/ICONS/folpar16.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841064)!
+Message: DMS2 : Load file SYSTEM/ICONS/folpar16.bmp 
+Message: DMS2 : Load file ./SYSTEM/ICONS/open.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/ICONS/open.bmp (file: ./SYSTEM/ICONS/open.bmp, Mode: rb)...
+Message: Opened (Size: 1254, adress of TFILE: 2841064)!
+Message: DMS2 : Load file ./SYSTEM/ICONS/open.bmp 
+Message: DMS2 : Load file ./SYSTEM/ICONS/save.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/ICONS/save.bmp (file: ./SYSTEM/ICONS/save.bmp, Mode: rb)...
+Message: Opened (Size: 824, adress of TFILE: 2841064)!
+Message: DMS2 : Load file ./SYSTEM/ICONS/save.bmp 
+Message: DMS2 : Load file SYSTEM/ICONS/add.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/add.bmp (file: SYSTEM/ICONS/add.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841064)!
+Message: DMS2 : Load file SYSTEM/ICONS/add.bmp 
+Message: DMS2 : Load file SYSTEM/ICONS/up.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/up.bmp (file: SYSTEM/ICONS/up.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841064)!
+Message: DMS2 : Load file SYSTEM/ICONS/up.bmp 
+Message: DMS2 : Load file SYSTEM/ICONS/remove.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/remove.bmp (file: SYSTEM/ICONS/remove.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841064)!
+Message: DMS2 : Load file SYSTEM/ICONS/remove.bmp 
+Message: DMS2 : Load file ./SYSTEM/ICONS/cancel.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/ICONS/cancel.bmp (file: ./SYSTEM/ICONS/cancel.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841064)!
+Message: DMS2 : Load file ./SYSTEM/ICONS/cancel.bmp 
+Message: Try to open ./xlib/tabbook.dl (file: xlib/tabbook.dl, Mode: rb)...
+Message: Opened (Size: 9950, adress of TFILE: 2841336)!
+Message: Loading application 'TabBook Widget'(8442b0), FileName - 'xlib/tabbook.dl'
+Message:          UID - 'tabbook' Version - 0x00020000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: CreateWidgetClass 5442636b
+Message: CreateWidgetClass 54616220
+Message: Try to open ./xlib/cp.dl (file: xlib/cp.dl, Mode: rb)...
+Message: Opened (Size: 7972, adress of TFILE: 2841336)!
+Message: Loading application 'Control Panel directory deamon'(850700), FileName - 'xlib/cp.dl'
+Message:          UID - 'ControlPanel' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: DMS2 : File extention '&cpld' -> Codec ffff0001
+Message: DMS2 : New codec ffff0001 : CP Codec (&cpld,vfile/controlpanel,ffff0001)
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: FMS2 : DTE ffff0001 'Control panel item'
+Message: FMS2 :     ffff0001 : New action 'Open' (268435455) -> Internal 00852d68
+Warning: NULL pointer at TextDup.t
+Message: Libraries loaded
+Message: Load start-up entries...
+Message: Run registry entries form /SYSTEM/STARTUP
+Message: ->Run xapps/desktop.app...
+Message: Try to open ./xapps/desktop.app (file: xapps/desktop.app, Mode: rb)...
+Message: Opened (Size: 14365, adress of TFILE: 2841400)!
+Message: Loading application 'OZ Desktop'(7bd950), FileName - 'xapps/desktop.app'
+Message:          UID - 'app:desktop' Version - 0x00000100
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Warning: DMS2 : Use default sub-codec instaed
+Message: DMS2 : Load file  using codec 504e4720 to type 00000003
+Message: Try to load ...
+Message: Try to open ./ (file: , Mode: rb)...
+Message: DMS2 : Codec is unable to load file
+Warning: DMS2 : Use default sub-codec instaed
+Message: DMS2 : Load file  using codec 504e4720 to type 00000003
+Message: Try to load ...
+Message: Try to open ./ (file: , Mode: rb)...
+Message: DMS2 : Codec is unable to load file
+Message: DMS2 : Load file DESKTOP/panel.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./DESKTOP/panel.bmp (file: DESKTOP/panel.bmp, Mode: rb)...
+Message: Opened (Size: 1134, adress of TFILE: 2841048)!
+Message: DMS2 : Load file DESKTOP/panel.bmp 
+Message: DMS2 : Load file DESKTOP/start.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./DESKTOP/start.bmp (file: DESKTOP/start.bmp, Mode: rb)...
+Message: Opened (Size: 3654, adress of TFILE: 2841048)!
+Message: DMS2 : Load file DESKTOP/start.bmp 
+Message: DMS2 : Load file DESKTOP/startovr.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./DESKTOP/startovr.bmp (file: DESKTOP/startovr.bmp, Mode: rb)...
+Message: Opened (Size: 3654, adress of TFILE: 2841048)!
+Message: DMS2 : Load file DESKTOP/startovr.bmp 
+Message: DMS2 : Load file DESKTOP/startdwn.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./DESKTOP/startdwn.bmp (file: DESKTOP/startdwn.bmp, Mode: rb)...
+Message: Opened (Size: 3654, adress of TFILE: 2841048)!
+Message: DMS2 : Load file DESKTOP/startdwn.bmp 
+Message: DMS2 : Load file DESKTOP/tray.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./DESKTOP/tray.bmp (file: DESKTOP/tray.bmp, Mode: rb)...
+Message: DMS2 : Codec is unable to load file
+Message: DMS2 : Load file ./DESKTOP/start.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././DESKTOP/start.bmp (file: ./DESKTOP/start.bmp, Mode: rb)...
+Message: Opened (Size: 3654, adress of TFILE: 2841096)!
+Message: DMS2 : Load file ./DESKTOP/start.bmp 
+Message: pretime
+Message: posttime
+Message: DMS2 : Load file SYSTEM/ICONS/power16.bmp using codec 424d5020 to type 00000003
+Message: Try to open ./SYSTEM/ICONS/power16.bmp (file: SYSTEM/ICONS/power16.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 2841128)!
+Message: DMS2 : Load file SYSTEM/ICONS/power16.bmp 
+Message: Desktop initialized
+Message: System Startup Complete
+
+Message: DMS2 : Load file SYSTEM/MENU/SAMPLE.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/SAMPLE.LN (file: SYSTEM/MENU/SAMPLE.LN, Mode: rb)...
+Message: Opened (Size: 16, adress of TFILE: 2840648)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/SAMPLE.LN 
+Message: Try to open ./xapps/sample.app (file: xapps/sample.app, Mode: rb)...
+Message: Opened (Size: 216256, adress of TFILE: 2840664)!
+Message: DMS2 : Load file SYSTEM/MENU/NAV.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/NAV.LN (file: SYSTEM/MENU/NAV.LN, Mode: rb)...
+Message: Opened (Size: 13, adress of TFILE: 2840648)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/NAV.LN 
+Message: Try to open ./xapps/nav.app (file: xapps/nav.app, Mode: rb)...
+Message: Opened (Size: 3629, adress of TFILE: 2840664)!
+Message: DMS2 : Load file SYSTEM/MENU/ILLKIRCH.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/ILLKIRCH.LN (file: SYSTEM/MENU/ILLKIRCH.LN, Mode: rb)...
+Message: Opened (Size: 18, adress of TFILE: 2840648)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/ILLKIRCH.LN 
+Message: Try to open ./xapps/illkirch.app (file: xapps/illkirch.app, Mode: rb)...
+Message: Opened (Size: 52346, adress of TFILE: 2840664)!
+Message: DMS2 : Load file SYSTEM/MENU/CONSOLE.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/CONSOLE.LN (file: SYSTEM/MENU/CONSOLE.LN, Mode: rb)...
+Message: Opened (Size: 25, adress of TFILE: 2840648)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/CONSOLE.LN 
+Message: Try to open ./xapps/console.app (file: xapps/console.app, Mode: rb)...
+Message: Opened (Size: 4577, adress of TFILE: 2840664)!
+Message: DMS2 : Load file SYSTEM/MENU/ABOUT.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/ABOUT.LN (file: SYSTEM/MENU/ABOUT.LN, Mode: rb)...
+Message: Opened (Size: 15, adress of TFILE: 2840648)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/ABOUT.LN 
+Message: Try to open ./xapps/about.app (file: xapps/about.app, Mode: rb)...
+Message: Opened (Size: 71410, adress of TFILE: 2840664)!
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/TIC-TAC-.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/TIC-TAC-.LN (file: SYSTEM/MENU/GAMES/TIC-TAC-.LN, Mode: rb)...
+Message: Opened (Size: 13, adress of TFILE: 2841000)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/TIC-TAC-.LN 
+Message: Try to open ./xapps/ttt.app (file: xapps/ttt.app, Mode: rb)...
+Message: Opened (Size: 10564, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/SNAKE.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/SNAKE.LN (file: SYSTEM/MENU/GAMES/SNAKE.LN, Mode: rb)...
+Message: Opened (Size: 15, adress of TFILE: 2841000)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/SNAKE.LN 
+Message: Try to open ./xapps/snake.app (file: xapps/snake.app, Mode: rb)...
+Message: Opened (Size: 15808, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/MINES.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/MINES.LN (file: SYSTEM/MENU/GAMES/MINES.LN, Mode: rb)...
+Message: Opened (Size: 15, adress of TFILE: 2841000)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/MINES.LN 
+Message: Try to open ./xapps/mines.app (file: xapps/mines.app, Mode: rb)...
+Message: Opened (Size: 13683, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/LABY.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/LABY.LN (file: SYSTEM/MENU/GAMES/LABY.LN, Mode: rb)...
+Message: Opened (Size: 14, adress of TFILE: 2841000)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/LABY.LN 
+Message: Try to open ./xapps/laby.app (file: xapps/laby.app, Mode: rb)...
+Message: Opened (Size: 4447, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/LABY.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/LABY.LN (file: SYSTEM/MENU/GAMES/LABY.LN, Mode: rb)...
+Message: Opened (Size: 14, adress of TFILE: 2840392)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/LABY.LN 
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/LABY.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/LABY.LN (file: SYSTEM/MENU/GAMES/LABY.LN, Mode: rb)...
+Message: Opened (Size: 14, adress of TFILE: 2840376)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/LABY.LN 
+Message: Try to open ./xapps/laby.app (file: xapps/laby.app, Mode: rb)...
+Message: Opened (Size: 4447, adress of TFILE: 2840216)!
+Message: Loading application 'Laby'(813440), FileName - 'xapps/laby.app'
+Message:          UID - '' Version - 0x00000100
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Could i report ?
+Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
+Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
+Message: Opened (Size: 51244, adress of TFILE: 2840968)!
+Message: DMS2 : Load file /system/System/sounds/info.mp3 
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Playing Stream 8846608
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Executing 88f580
+Message: Pause Stream 8846608
+Message: Catch message( 88f580, ffff4002 )
+Message: Return Message ffff4002
+Message: Executing 88f580
+Message: Catch message( 88f580, ffff8001 )
+Message: Return Message ffff8001
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Close :: Laby
+Message: AppExtendersDeInit
+Message: Free Application :: Laby
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/LABY.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/LABY.LN (file: SYSTEM/MENU/GAMES/LABY.LN, Mode: rb)...
+Message: Opened (Size: 14, adress of TFILE: 2840392)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/LABY.LN 
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/LABY.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/LABY.LN (file: SYSTEM/MENU/GAMES/LABY.LN, Mode: rb)...
+Message: Opened (Size: 14, adress of TFILE: 2840376)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/LABY.LN 
+Message: Try to open ./xapps/laby.app (file: xapps/laby.app, Mode: rb)...
+Message: Opened (Size: 4447, adress of TFILE: 2840216)!
+Message: Loading application 'Laby'(82d108), FileName - 'xapps/laby.app'
+Message:          UID - '' Version - 0x00000100
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Could i report ?
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Close :: Laby
+Message: AppExtendersDeInit
+Message: Free Application :: Laby
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/LABY.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/LABY.LN (file: SYSTEM/MENU/GAMES/LABY.LN, Mode: rb)...
+Message: Opened (Size: 14, adress of TFILE: 2840392)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/LABY.LN 
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/LABY.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/LABY.LN (file: SYSTEM/MENU/GAMES/LABY.LN, Mode: rb)...
+Message: Opened (Size: 14, adress of TFILE: 2840376)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/LABY.LN 
+Message: Try to open ./xapps/laby.app (file: xapps/laby.app, Mode: rb)...
+Message: Opened (Size: 4447, adress of TFILE: 2840216)!
+Message: Loading application 'Laby'(82d108), FileName - 'xapps/laby.app'
+Message:          UID - '' Version - 0x00000100
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Could i report ?
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Close :: Laby
+Message: AppExtendersDeInit
+Message: Free Application :: Laby
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/MINES.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/MINES.LN (file: SYSTEM/MENU/GAMES/MINES.LN, Mode: rb)...
+Message: Opened (Size: 15, adress of TFILE: 2840392)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/MINES.LN 
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/MINES.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/MINES.LN (file: SYSTEM/MENU/GAMES/MINES.LN, Mode: rb)...
+Message: Opened (Size: 15, adress of TFILE: 2840376)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/MINES.LN 
+Message: Try to open ./xapps/mines.app (file: xapps/mines.app, Mode: rb)...
+Message: Opened (Size: 13683, adress of TFILE: 2840216)!
+Message: Loading application '03 Mines'(813068), FileName - 'xapps/mines.app'
+Message:          UID - 'o3mines' Version - 0x00000100
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Could i report ?
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Close :: 03 Mines
+Message: AppExtendersDeInit
+Message: Free Application :: 03 Mines
+Message: DMS2 : Load file SYSTEM/MENU/MEDIA/VOLUME.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/MEDIA/VOLUME.LN (file: SYSTEM/MENU/MEDIA/VOLUME.LN, Mode: rb)...
+Message: Opened (Size: 16, adress of TFILE: 2841000)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/MEDIA/VOLUME.LN 
+Message: Try to open ./xapps/setvol.app (file: xapps/setvol.app, Mode: rb)...
+Message: Opened (Size: 1677, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/MENU/MEDIA/PLAYER.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/MEDIA/PLAYER.LN (file: SYSTEM/MENU/MEDIA/PLAYER.LN, Mode: rb)...
+Message: Opened (Size: 16, adress of TFILE: 2841000)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/MEDIA/PLAYER.LN 
+Message: Try to open ./xapps/ssplay.app (file: xapps/ssplay.app, Mode: rb)...
+Message: Opened (Size: 13792, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/SNAKE.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/SNAKE.LN (file: SYSTEM/MENU/GAMES/SNAKE.LN, Mode: rb)...
+Message: Opened (Size: 15, adress of TFILE: 2840392)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/SNAKE.LN 
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/SNAKE.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/SNAKE.LN (file: SYSTEM/MENU/GAMES/SNAKE.LN, Mode: rb)...
+Message: Opened (Size: 15, adress of TFILE: 2840376)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/SNAKE.LN 
+Message: Try to open ./xapps/snake.app (file: xapps/snake.app, Mode: rb)...
+Message: Opened (Size: 15808, adress of TFILE: 2840216)!
+Message: Loading application 'O3Snake'(8357b8), FileName - 'xapps/snake.app'
+Message:          UID - 'pm:o3snake' Version - 0x00000100
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Warning: REGISTRY : Unknow key /USER/GAMES/O3SNAKE/FLAGS
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Could i report ?
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Close :: O3Snake
+Message: AppExtendersDeInit
+Message: Free Application :: O3Snake
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/TIC-TAC-.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/TIC-TAC-.LN (file: SYSTEM/MENU/GAMES/TIC-TAC-.LN, Mode: rb)...
+Message: Opened (Size: 13, adress of TFILE: 2840392)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/TIC-TAC-.LN 
+Message: DMS2 : Load file SYSTEM/MENU/GAMES/TIC-TAC-.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/GAMES/TIC-TAC-.LN (file: SYSTEM/MENU/GAMES/TIC-TAC-.LN, Mode: rb)...
+Message: Opened (Size: 13, adress of TFILE: 2840376)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/GAMES/TIC-TAC-.LN 
+Message: Try to open ./xapps/ttt.app (file: xapps/ttt.app, Mode: rb)...
+Message: Opened (Size: 10564, adress of TFILE: 2840216)!
+Message: Loading application '03 TicTacToe'(808688), FileName - 'xapps/ttt.app'
+Message:          UID - 'o3ttt' Version - 0x00000100
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Could i report ?
+Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
+Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
+Message: Opened (Size: 51244, adress of TFILE: 2840744)!
+Message: DMS2 : Load file /system/System/sounds/info.mp3 
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Playing Stream 9138816
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Executing 8d6af0
+Message: Catch message( 8d6af0, ffff4002 )
+Message: Return Message ffff4002
+Message: Executing 8d6af0
+Message: Catch message( 8d6af0, ffff8001 )
+Message: Return Message ffff8001
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Pause Stream 9138816
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Close :: 03 TicTacToe
+Message: AppExtendersDeInit
+Message: Free Application :: 03 TicTacToe
+Message: DMS2 : Load file SYSTEM/MENU/MEDIA/PLAYER.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/MEDIA/PLAYER.LN (file: SYSTEM/MENU/MEDIA/PLAYER.LN, Mode: rb)...
+Message: Opened (Size: 16, adress of TFILE: 2840392)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/MEDIA/PLAYER.LN 
+Message: DMS2 : Load file SYSTEM/MENU/MEDIA/PLAYER.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/MEDIA/PLAYER.LN (file: SYSTEM/MENU/MEDIA/PLAYER.LN, Mode: rb)...
+Message: Opened (Size: 16, adress of TFILE: 2840376)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/MEDIA/PLAYER.LN 
+Message: Try to open ./xapps/ssplay.app (file: xapps/ssplay.app, Mode: rb)...
+Message: Opened (Size: 13792, adress of TFILE: 2840216)!
+Message: Loading application 'Sound Stream Player'(80be90), FileName - 'xapps/ssplay.app'
+Message:          UID - 'ap:ssplay' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Warning: NULL pointer at TextDup.t
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Could i report ?
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Close :: Sound Stream Player
+Message: AppExtendersDeInit
+Message: Free Application :: Sound Stream Player
+Message: DMS2 : Load file SYSTEM/MENU/TOOLS/RESEDIT.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/TOOLS/RESEDIT.LN (file: SYSTEM/MENU/TOOLS/RESEDIT.LN, Mode: rb)...
+Message: Opened (Size: 17, adress of TFILE: 2841000)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/TOOLS/RESEDIT.LN 
+Message: Try to open ./xapps/resedit.app (file: xapps/resedit.app, Mode: rb)...
+Message: Opened (Size: 7451, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/MENU/TOOLS/REGEDIT.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/TOOLS/REGEDIT.LN (file: SYSTEM/MENU/TOOLS/REGEDIT.LN, Mode: rb)...
+Message: Opened (Size: 17, adress of TFILE: 2841000)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/TOOLS/REGEDIT.LN 
+Message: Try to open ./xapps/regedit.app (file: xapps/regedit.app, Mode: rb)...
+Message: Opened (Size: 7874, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/MENU/TOOLS/O3PAD.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/TOOLS/O3PAD.LN (file: SYSTEM/MENU/TOOLS/O3PAD.LN, Mode: rb)...
+Message: Opened (Size: 15, adress of TFILE: 2841000)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/TOOLS/O3PAD.LN 
+Message: Try to open ./xapps/o3pad.app (file: xapps/o3pad.app, Mode: rb)...
+Message: Opened (Size: 4792, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/MENU/TOOLS/KEDIT.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/TOOLS/KEDIT.LN (file: SYSTEM/MENU/TOOLS/KEDIT.LN, Mode: rb)...
+Message: Opened (Size: 15, adress of TFILE: 2841000)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/TOOLS/KEDIT.LN 
+Message: Try to open ./xapps/kedit.app (file: xapps/kedit.app, Mode: rb)...
+Message: Opened (Size: 33383, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/MENU/TOOLS/CALC.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/TOOLS/CALC.LN (file: SYSTEM/MENU/TOOLS/CALC.LN, Mode: rb)...
+Message: Opened (Size: 14, adress of TFILE: 2841000)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/TOOLS/CALC.LN 
+Message: Try to open ./xapps/calc.app (file: xapps/calc.app, Mode: rb)...
+Message: Opened (Size: 7390, adress of TFILE: 2841016)!
+Message: DMS2 : Load file SYSTEM/MENU/TOOLS/KEDIT.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/TOOLS/KEDIT.LN (file: SYSTEM/MENU/TOOLS/KEDIT.LN, Mode: rb)...
+Message: Opened (Size: 15, adress of TFILE: 2840392)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/TOOLS/KEDIT.LN 
+Message: DMS2 : Load file SYSTEM/MENU/TOOLS/KEDIT.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/TOOLS/KEDIT.LN (file: SYSTEM/MENU/TOOLS/KEDIT.LN, Mode: rb)...
+Message: Opened (Size: 15, adress of TFILE: 2840376)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/TOOLS/KEDIT.LN 
+Message: Try to open ./xapps/kedit.app (file: xapps/kedit.app, Mode: rb)...
+Message: Opened (Size: 33383, adress of TFILE: 2840216)!
+Message: Loading application 'Keyboard editor'(80be90), FileName - 'xapps/kedit.app'
+Message:          UID - 'app:kedit' Version - 0x00000001
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Could i report ?
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Close :: Keyboard editor
+Message: AppExtendersDeInit
+Message: Free Application :: Keyboard editor
+Message: DMS2 : Load file SYSTEM/MENU/CONSOLE.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/CONSOLE.LN (file: SYSTEM/MENU/CONSOLE.LN, Mode: rb)...
+Message: Opened (Size: 25, adress of TFILE: 2840392)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/CONSOLE.LN 
+Message: DMS2 : Load file SYSTEM/MENU/CONSOLE.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/CONSOLE.LN (file: SYSTEM/MENU/CONSOLE.LN, Mode: rb)...
+Message: Opened (Size: 25, adress of TFILE: 2840376)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/CONSOLE.LN 
+Message: Try to open ./xapps/console.app (file: xapps/console.app, Mode: rb)...
+Message: Opened (Size: 4577, adress of TFILE: 2840216)!
+Message: Loading application 'console'(80be90), FileName - '/system/xapps/console.app'
+Message:          UID - '' Version - 0x00000100
+Warning: REGISTRY : Unknow key /SYSTEM/LIBRARIES/conlib
+Message: Try to open ./xlib/conlib.dl (file: xlib/conlib.dl, Mode: rb)...
+Message: Opened (Size: 9364, adress of TFILE: 2839880)!
+Message: Loading application 'Console Libary'(7da900), FileName - '/system/xlib/conlib.dl'
+Message:          UID - 'conlib' Version - 0x00010000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: AppExtendersInit
+Message: _ExternConsolePreInit 80be90;
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: starting printf.....
+
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: 0th char: C
+
+Message: 1th char: o
+
+Message: 2th char: d
+
+Message: 3th char: e
+
+Message: 4th char: n
+
+Message: 5th char: a
+
+Message: 6th char: m
+
+Message: 7th char: e
+
+Message: 8th char: :
+
+Message: 9th char:  
+
+Message: 10th char: P
+
+Message: 11th char: h
+
+Message: 12th char: o
+
+Message: 13th char: e
+
+Message: 14th char: n
+
+Message: 15th char: i
+
+Message: 16th char: x
+
+Message: 17th char:  
+
+Message: 18th char: K
+
+Message: 19th char: e
+
+Message: 20th char: r
+
+Message: 21th char: n
+
+Message: 22th char: e
+
+Message: 23th char: l
+
+Message: 24th char:  
+
+Message: 25th char: (
+
+Message: 26th char: u
+
+Message: 27th char: p
+
+Message: 28th char: d
+
+Message: 29th char: a
+
+Message: 30th char: t
+
+Message: 31th char: e
+
+Message: 32th char: )
+
+Message: 33th char:  
+
+Message: 34th char: 0
+
+Message: 35th char: .
+
+Message: 36th char: 5
+
+Message: 37th char: .
+
+Message: 38th char: 8
+
+Message: 39th char: .
+
+Message: 40th char: 0
+
+Message: 41th char: 
+
+
+Message: 42th char: d
+
+Message: 43th char: o
+
+Message: 44th char: s
+
+Message: 45th char: c
+
+Message: 46th char: o
+
+Message: 47th char: r
+
+Message: 48th char: e
+
+Message: 49th char:  
+
+Message: 50th char: 2
+
+Message: 51th char: 0
+
+Message: 52th char: 0
+
+Message: 53th char: 7
+
+Message: 54th char: -
+
+Message: 55th char: 2
+
+Message: 56th char: 0
+
+Message: 57th char: 2
+
+Message: 58th char: 0
+
+Message: 59th char: 
+
+
+Message: 60th char: 
+
+
+Message: 61th char: C
+
+Message: 62th char: o
+
+Message: 63th char: n
+
+Message: 64th char: s
+
+Message: 65th char: o
+
+Message: 66th char: l
+
+Message: 67th char: e
+
+Message: 68th char:  
+
+Message: 69th char: 0
+
+Message: 70th char: .
+
+Message: 71th char: 0
+
+Message: 72th char: .
+
+Message: 73th char: 1
+
+Message: 74th char: .
+
+Message: 75th char: 0
+
+Message: 76th char: 
+
+
+Message: 0th char: 
+
+
+Message: 0th char: /
+
+Message: 1th char: s
+
+Message: 2th char: y
+
+Message: 3th char: s
+
+Message: 4th char: t
+
+Message: 5th char: e
+
+Message: 6th char: m
+
+Message: 7th char: >
+
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Break :: console (0x0080be90)
+Message: Try to call close function.
+Message: Close :: console
+Message: AppExtendersDeInit
+Message: _ExternConsolePreUnInit 80be90;
+Message: _CloseConsole(7f07b0)
+Message: _CloseConsole return;
+Warning: Closed.
+Message: Close :: Console Libary
+Message: AppExtendersDeInit
+Message: Free Application :: console
+Message: Free Application :: Console Libary
+Message: DMS2 : Load file SYSTEM/MENU/ILLKIRCH.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/ILLKIRCH.LN (file: SYSTEM/MENU/ILLKIRCH.LN, Mode: rb)...
+Message: Opened (Size: 18, adress of TFILE: 2840392)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/ILLKIRCH.LN 
+Message: DMS2 : Load file SYSTEM/MENU/ILLKIRCH.LN using codec 00000000 to type 00000001
+Message: Try to open ./SYSTEM/MENU/ILLKIRCH.LN (file: SYSTEM/MENU/ILLKIRCH.LN, Mode: rb)...
+Message: Opened (Size: 18, adress of TFILE: 2840376)!
+Message: DMS2 : Sub codec load emu SYSTEM/MENU/ILLKIRCH.LN 
+Message: Try to open ./xapps/illkirch.app (file: xapps/illkirch.app, Mode: rb)...
+Message: Opened (Size: 52346, adress of TFILE: 2840216)!
+Message: Loading application 'codename illkirch'(7da900), FileName - 'xapps/illkirch.app'
+Message:          UID - 'illkirch' Version - 0x00010000
+Message: Try to open ./xlib/memfile.dl (file: xlib/memfile.dl, Mode: rb)...
+Message: Opened (Size: 3131, adress of TFILE: 2839880)!
+Message: Loading application 'Memory files'(7d47f8), FileName - 'xlib/memfile.dl'
+Message:          UID - 'memfile' Version - 0x00010000
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message:   New property 'name'
+Message:   New property 'r.a.x'
+Message:   New property 'r.a.y'
+Message:   New property 'r.b.x'
+Message:   New property 'r.b.y'
+Message: New dev class 'window'
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message:   New property 'caption'
+Message:   New property 'maximize'
+Message:     Default value : true
+Message:   New property 'minimize'
+Message:     Default value : true
+Message:   New property 'resize'
+Message:     Default value : false
+Message:   New property 'center'
+Message:     Default value : false
+Message:   New property 'wflags'
+Message: New dev class 'button'
+Warning: NULL pointer at TextDup.t
+Message:   New property 'caption'
+Message:   New property 'message'
+Message:     Default value : 0
+Message:   New property 'wflags'
+Message: New dev class 'label'
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message:   New property 'caption'
+Message:   New property 'wflags'
+Message: New dev class 'slider'
+Message:   New property 'value'
+Message:     Default value : 0
+Message:   New property 'max'
+Message:     Default value : 10
+Message:   New property 'wflags'
+Message: New dev class 'textbox'
+Message:   New property 'editable'
+Message:     Default value : false
+Message:   New property 'multiline'
+Message:     Default value : false
+Message:   New property 'wflags'
+Message: New dev class 'listview'
+Message:   New property 'wflags'
+Message: New dev class 'checkbox'
+Message:   New property 'caption'
+Message:     Default value : 
+Message:   New property 'checked'
+Message:     Default value : false
+Message:   New property 'wflags'
+Message: New dev class 'dirview'
+Message:   New property 'wflags'
+Message: New dev class 'dirtreeview'
+Warning: NULL pointer at TextDup.t
+Message:   New property 'wflags'
+Message: New dev class 'treeview'
+Message:   New property 'wflags'
+Message: New dev class 'groupbox'
+Message:   New property 'caption'
+Message:     Default value : Caption
+Message:   New property 'wflags'
+Message: New dev class 'progress'
+Message:   New property 'value'
+Message:     Default value : 0
+Message:   New property 'max'
+Message:     Default value : 100
+Message:   New property 'wflags'
+Message: New dev class 'menuview'
+Message:   New property 'menu'
+Message:   New property 'wflags'
+Message: New dev class 'splitv'
+Message:   New property 'wflags'
+Message: New dev class 'splith'
+Message:   New property 'wflags'
+Message: Class ID#0 ()(Not installed) : support advanced iwidget
+Message: Class ID#7a53706c (zSpl)(Not installed) : basic iwidget support
+Message: Class ID#5653706c (VSpl)(Installed) : basic iwidget support
+Message: Class ID#4853706c (HSpl)(Installed) : basic iwidget support
+Message: Class ID#42746e20 (Btn )(Installed) : support advanced iwidget
+Message: Class ID#4c626c20 (Lbl )(Installed) : support advanced iwidget
+Message: Class ID#4c626c49 (LblI)(Not installed) : basic iwidget support
+Message: Class ID#50726773 (Prgs)(Installed) : support advanced iwidget
+Message: Class ID#43686b42 (ChkB)(Installed) : support advanced iwidget
+Message: Class ID#4d656e75 (Menu)(Installed) : support advanced iwidget
+Message: Class ID#536c5767 (SlWg)(Not installed) : basic iwidget support
+Message: Class ID#7853636c (xScl)(Not installed) : basic iwidget support
+Message: Class ID#54787442 (TxtB)(Installed) : support advanced iwidget
+Message: Class ID#57696e20 (Win )(Installed) : support advanced iwidget
+Message: Class ID#4c737442 (LstB)(Not installed) : basic iwidget support
+Message: Class ID#54726556 (TreV)(Installed) : basic iwidget support
+Message: Class ID#47727042 (GrpB)(Installed) : support advanced iwidget
+Message: Class ID#536c6472 (Sldr)(Installed) : support advanced iwidget
+Message: Class ID#4c737456 (LstV)(Installed) : basic iwidget support
+Message: Class ID#436d6242 (CmbB)(Not installed) : basic iwidget support
+Message: Class ID#546c4272 (TlBr)(Not installed) : basic iwidget support
+Message: Class ID#44725677 (DrVw)(Installed) : basic iwidget support
+Message: Class ID#44547256 (DTrV)(Installed) : basic iwidget support
+Message: Class ID#5442636b (TBck)(Not installed) : basic iwidget support
+Message: Class ID#54616220 (Tab )(Not installed) : basic iwidget support
+Message: Add property : name into 9c3c68
+Message: Add property : r.a.x into 9c3c68
+Message: Add property : r.a.y into 9c3c68
+Message: Add property : r.b.x into 9c3c68
+Message: Add property : r.b.y into 9c3c68
+Warning: NULL pointer at TextDup.t
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Could i report ?
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Close :: codename illkirch
+Message: DevWidgetFreeEx(9c3c68->Properties = 9c3d48)
+Message: OK
+Message: AppExtendersDeInit
+Message: Close :: Memory files
+Message: AppExtendersDeInit
+Message: Free Application :: codename illkirch
+Message: Free Application :: Memory files
+Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
+Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
+Message: Opened (Size: 51244, adress of TFILE: 2840392)!
+Message: DMS2 : Load file /system/System/sounds/info.mp3 
+Message: Playing Stream 9365472
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/active_window
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/passive_window
+Message: Executing 90e050
+Message: Catch message( 90e050, ffff4002 )
+Message: Return Message ffff4002
+Message: Executing 90e050
+Message: Pause Stream 9365472
+Message: Catch message( 90e050, ffff8004 )
+Message: Return Message ffff8004
+Message: +++ SYSTEM GOING DOWN FOR HALT +++
+
+Message: Shutting down DynLd...
+Message: Close :: OZ Desktop
+Message: AppExtendersDeInit
+Message: Close :: Control Panel directory deamon
+Message: AppExtendersDeInit
+Message: Close :: TabBook Widget
+Message: AppExtendersDeInit
+Message: Close :: I/O Dialogs
+Message: AppExtendersDeInit
+Message: Close :: File Management System v2
+Message: AppExtendersDeInit
+Message: Close :: Toolbar Widget
+Message: AppExtendersDeInit
+Message: Close :: Combobox widget
+Message: AppExtendersDeInit
+Message: Close :: Listview Widget
+Message: AppExtendersDeInit
+Message: Close :: Slider Widget
+Message: AppExtendersDeInit
+Message: Close :: Groupbox Widget
+Message: AppExtendersDeInit
+Message: Close :: Treeview Widget
+Message: AppExtendersDeInit
+Message: Close :: Listbox Widget
+Message: AppExtendersDeInit
+Message: Close :: Window Widget
+Message: AppExtendersDeInit
+Message: Close :: MP3 loader (Allegro MP3)
+Message: AppExtendersDeInit
+Message: Close :: Textbox Widget
+Message: AppExtendersDeInit
+Message: Close :: Scrollbar Widget
+Message: AppExtendersDeInit
+Message: Close :: Canvas widget
+Message: AppExtendersDeInit
+Message: Close :: Menu Widget
+Message: AppExtendersDeInit
+Message: Close :: Checkbox Widget
+Message: AppExtendersDeInit
+Message: Close :: Progressbar Widget
+Message: AppExtendersDeInit
+Message: Close :: Label Widget
+Message: AppExtendersDeInit
+Message: Close :: Button Widget
+Message: AppExtendersDeInit
+Message: Close :: Widget System
+Message: AppExtendersDeInit
+Message: Close :: Skin System
+Message: Skin system destroyed a total of '49' skin items
+Message: AppExtendersDeInit
+Message: Close :: Sound System
+Message: AppExtendersDeInit
+Message: Close :: Clipboard
+Message: AppExtendersDeInit
+Message: Close :: Graphics Extender
+Message: AppExtendersDeInit
+Message: Close :: JPG (Alleg) loader/saver
+Message: AppExtendersDeInit
+Message: Close :: libpng + ldpng
+Message: AppExtendersDeInit
+Message: Close :: BMP loader/saver
+Message: AppExtendersDeInit
+Message: Free Application :: OZ Desktop
+Message: Free Application :: Control Panel directory deamon
+Message: Free Application :: TabBook Widget
+Message: Free Application :: I/O Dialogs
+Message: Free Application :: File Management System v2
+Message: Free Application :: Toolbar Widget
+Message: Free Application :: Combobox widget
+Message: Free Application :: Listview Widget
+Message: Free Application :: Slider Widget
+Message: Free Application :: Groupbox Widget
+Message: Free Application :: Treeview Widget
+Message: Free Application :: Listbox Widget
+Message: Free Application :: Window Widget
+Message: Free Application :: MP3 loader (Allegro MP3)
+Message: Free Application :: Textbox Widget
+Message: Free Application :: Scrollbar Widget
+Message: Free Application :: Canvas widget
+Message: Free Application :: Menu Widget
+Message: Free Application :: Checkbox Widget
+Message: Free Application :: Progressbar Widget
+Message: Free Application :: Label Widget
+Message: Free Application :: Button Widget
+Message: Free Application :: Widget System
+Message: Free Application :: Skin System
+Message: Free Application :: Sound System
+Message: Free Application :: Clipboard
+Message: Free Application :: Graphics Extender
+Message: Free Application :: JPG (Alleg) loader/saver
+Message: Free Application :: libpng + ldpng
+Message: Free Application :: BMP loader/saver
+Message: DynLd Stopped
+Message: Saving registry...
+Message: Try to open ./system/settings.dat (file: system/settings.dat, Mode: wb)...
+Message: Opened (Size: 0, adress of TFILE: 2841592)!
+Message: Registry saved
+Message: Registry freed
+Message: Logging stopped, closing log file

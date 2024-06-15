@@ -1,0 +1,15 @@
+# Phoenix 1.2 Makefile
+# Written by Lukas Lipka and Julien Etelain
+
+CFLAGS   = -O3 -funroll-loops -Iinclude
+CPPFLAGS = -O3 -funroll-loops -Iinclude
+
+REMOVE = rm -f
+OBJ_DIR = obj
+DYNLDLNK = ./dynldlnk
+MAIN = ./bin/main
+OBJ_LIST2 = $(OBJ_DIR)/vfile/linux.o
+LIB_LIST = lib/unixttf.a `allegro-config --libs` -lz
+LIB_DYNLNK = -lz
+
+include common.mak 

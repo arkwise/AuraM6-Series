@@ -1,0 +1,26 @@
+echo off
+echo loading Aura gui..
+if exist goto hdpmi32
+if exist goto cwsdpmi
+echo Aura requires a DPMI manager to run.
+pause
+
+:hdpmi32
+hdpmi32.exe
+goto aura
+
+:cwsdmpi
+cwsdpmi.exe
+goto aura
+
+
+:aura
+rem i think we will add the choice here to load a driver by choice eventually. 
+
+ne2000 0x60
+doslfn
+ctmouse
+main.exe
+
+:end
+echo so so dark here..
