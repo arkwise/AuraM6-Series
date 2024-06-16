@@ -1,12 +1,9 @@
 
-this is for the auram5new folder only. this should be the latest code from kdog.
-
-
 # Aura M6
 # Tech 6 Kernel 0.9.8.0
-# 20 August 2023 
+# 15 june 2024
 
-# development build 4000 series #
+# development build 4081 series #
 
 Welcome to the developer release of aura milestone 6.
 
