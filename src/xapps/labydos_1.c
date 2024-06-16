@@ -4,24 +4,40 @@
 #include "canvas.h"
 #include "window.h"
 #include "timer.h"
+#include "debug.h"
+#include <time.h>
 
-l_ulong UID          = ULONG_ID('L','A','B','Y');
-l_ulong AppVersion   = ULONG_ID(0,0,2,0);
-char AppName[]       = "Laby";
+l_ulong UID = ULONG_ID('L', 'A', 'B', 'Y');
+l_ulong AppVersion = ULONG_ID(0, 0, 2, 0);
+char AppName[] = "Laby";
 
-#define MAX_ENEMIES 2
+#define MAX_ENEMIES 10
+#define MAX_BOMBS 10
 
 typedef struct {
     int x;
     int y;
+    int active;
 } Enemy;
 
+typedef struct {
+    int x;
+    int y;
+    int active;
+} Bomb;
+
 Enemy Enemies[MAX_ENEMIES];
+Bomb Bombs[MAX_BOMBS];
+int WeaponX, WeaponY;
+int WeaponActive = 0;
+int CurrentEnemyCount = 2;
+clock_t startTime, endTime;
+double totalTime;
 
 _PUBLIC l_int WhereX = 1;
 _PUBLIC l_int WhereY = 1;
 _PUBLIC PCanvas Laby = 0;
-_PUBLIC l_int Level  = 1;
+_PUBLIC l_int Level = 1;
 
 /**
 *   Map information
@@ -119,7 +135,7 @@ l_char MapDATLevels[4][MAPSIZE][MAPSIZE] =
         { 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0 },
         { 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0 },
         { 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0 },
-        { 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0 },
+        { 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0 },
         { 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
         { 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0 },
         { 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0 },
@@ -131,31 +147,89 @@ l_char MapDATLevels[4][MAPSIZE][MAPSIZE] =
 
 void InitEnemies()
 {
-    Enemies[0].x = 3;
-    Enemies[0].y = 3;
-    Enemies[1].x = 15;
-    Enemies[1].y = 15;
+    int i;
+    for (i = 0; i < CurrentEnemyCount; i++)
+    {
+        Enemies[i].x = rand() % MAPSIZE;
+        Enemies[i].y = rand() % MAPSIZE;
+        Enemies[i].active = 1;
+    }
+}
+
+void InitWeaponBox()
+{
+    WeaponX = rand() % MAPSIZE;
+    WeaponY = rand() % MAPSIZE;
+}
+
+void InitBombs()
+{
+    int i;
+    for (i = 0; i < MAX_BOMBS; i++)
+    {
+        Bombs[i].active = 0;
+    }
 }
 
 void MoveEnemies()
 {
-    int i, new_x, new_y;
-    for (i = 0; i < MAX_ENEMIES; i++)
+    int i;
+    for (i = 0; i < CurrentEnemyCount; i++)
     {
-        // Calculate direction towards the player
-        if (Enemies[i].x < WhereX) new_x = Enemies[i].x + 1;
-        else if (Enemies[i].x > WhereX) new_x = Enemies[i].x - 1;
-        else new_x = Enemies[i].x;
-
-        if (Enemies[i].y < WhereY) new_y = Enemies[i].y + 1;
-        else if (Enemies[i].y > WhereY) new_y = Enemies[i].y - 1;
-        else new_y = Enemies[i].y;
-
-        // Ensure new position is valid and on '1' tile
-        if (new_x > 0 && new_x < MAPSIZE && new_y > 0 && new_y < MAPSIZE && MapDAT[new_x][new_y] == 1)
+        if (Enemies[i].active)
         {
-            Enemies[i].x = new_x;
-            Enemies[i].y = new_y;
+            int direction = rand() % 4;
+
+            switch (direction)
+            {
+                case 0: // Move up
+                    if (Enemies[i].y > 0 && MapDAT[Enemies[i].x][Enemies[i].y - 1] == 1) Enemies[i].y--;
+                    break;
+                case 1: // Move down
+                    if (Enemies[i].y < MAPSIZE - 1 && MapDAT[Enemies[i].x][Enemies[i].y + 1] == 1) Enemies[i].y++;
+                    break;
+                case 2: // Move left
+                    if (Enemies[i].x > 0 && MapDAT[Enemies[i].x - 1][Enemies[i].y] == 1) Enemies[i].x--;
+                    break;
+                case 3: // Move right
+                    if (Enemies[i].x < MAPSIZE - 1 && MapDAT[Enemies[i].x + 1][Enemies[i].y] == 1) Enemies[i].x++;
+                    break;
+            }
+        }
+    }
+}
+
+void DropBomb()
+{
+    int i;
+    for (i = 0; i < MAX_BOMBS; i++)
+    {
+        if (!Bombs[i].active)
+        {
+            Bombs[i].x = WhereX;
+            Bombs[i].y = WhereY;
+            Bombs[i].active = 1;
+            break;
+        }
+    }
+}
+
+void CheckBombs()
+{
+    int i, j;
+    for (i = 0; i < MAX_BOMBS; i++)
+    {
+        if (Bombs[i].active)
+        {
+            for (j = 0; j < CurrentEnemyCount; j++)
+            {
+                if (Enemies[j].active && Bombs[i].x == Enemies[j].x && Bombs[i].y == Enemies[j].y)
+                {
+                    Enemies[j].active = 0;
+                    Bombs[i].active = 0;
+                    break;
+                }
+            }
         }
     }
 }
@@ -221,15 +295,45 @@ _PUBLIC void GameDraw(PWidget o, p_bitmap buffer, PRect w)
     rectfill(buffer, o->Absolute.a.x+(o->Absolute.b.x-o->Absolute.a.x)/2-10, o->Absolute.a.y+(o->Absolute.b.y-o->Absolute.a.y)/2-10, o->Absolute.a.x+(o->Absolute.b.x-o->Absolute.a.x)/2+10, o->Absolute.a.y+(o->Absolute.b.y-o->Absolute.a.y)/2+10, makecol(255,5,5));
 
     /**
+    *   Weapon Box
+    */
+    if (!WeaponActive)
+    {
+        rectfill(buffer, o->Absolute.a.x + (WeaponX - WhereX + 3) * ((o->Absolute.b.x - o->Absolute.a.x) / 5) - (o->Absolute.b.x - o->Absolute.a.x) / 5,
+                         o->Absolute.a.y + (WeaponY - WhereY + 3) * ((o->Absolute.b.y - o->Absolute.a.y) / 5) - (o->Absolute.b.y - o->Absolute.a.y) / 5,
+                         o->Absolute.a.x + (WeaponX - WhereX + 3) * ((o->Absolute.b.x - o->Absolute.a.x) / 5),
+                         o->Absolute.a.y + (WeaponY - WhereY + 3) * ((o->Absolute.b.y - o->Absolute.a.y) / 5),
+                         makecol(0,255,0));
+    }
+
+    /**
     *   Enemies
     */
-    for (x = 0; x < MAX_ENEMIES; x++)
+    for (x = 0; x < CurrentEnemyCount; x++)
     {
-        rectfill(buffer, o->Absolute.a.x + (Enemies[x].x - WhereX + 3) * ((o->Absolute.b.x - o->Absolute.a.x) / 5) - (o->Absolute.b.x - o->Absolute.a.x) / 5,
-                         o->Absolute.a.y + (Enemies[x].y - WhereY + 3) * ((o->Absolute.b.y - o->Absolute.a.y) / 5) - (o->Absolute.b.y - o->Absolute.a.y) / 5,
-                         o->Absolute.a.x + (Enemies[x].x - WhereX + 3) * ((o->Absolute.b.x - o->Absolute.a.x) / 5),
-                         o->Absolute.a.y + (Enemies[x].y - WhereY + 3) * ((o->Absolute.b.y - o->Absolute.a.y) / 5),
-                         makecol(0,0,255));
+        if (Enemies[x].active)
+        {
+            rectfill(buffer, o->Absolute.a.x + (Enemies[x].x - WhereX + 3) * ((o->Absolute.b.x - o->Absolute.a.x) / 5) - (o->Absolute.b.x - o->Absolute.a.x) / 5,
+                             o->Absolute.a.y + (Enemies[x].y - WhereY + 3) * ((o->Absolute.b.y - o->Absolute.a.y) / 5) - (o->Absolute.b.y - o->Absolute.a.y) / 5,
+                             o->Absolute.a.x + (Enemies[x].x - WhereX + 3) * ((o->Absolute.b.x - o->Absolute.a.x) / 5),
+                             o->Absolute.a.y + (Enemies[x].y - WhereY + 3) * ((o->Absolute.b.y - o->Absolute.a.y) / 5),
+                             makecol(0,0,255));
+        }
+    }
+
+    /**
+    *   Bombs
+    */
+    for (x = 0; x < MAX_BOMBS; x++)
+    {
+        if (Bombs[x].active)
+        {
+            rectfill(buffer, o->Absolute.a.x + (Bombs[x].x - WhereX + 3) * ((o->Absolute.b.x - o->Absolute.a.x) / 5) - (o->Absolute.b.x - o->Absolute.a.x) / 5,
+                             o->Absolute.a.y + (Bombs[x].y - WhereY + 3) * ((o->Absolute.b.y - o->Absolute.a.y) / 5) - (o->Absolute.b.y - o->Absolute.a.y) / 5,
+                             o->Absolute.a.x + (Bombs[x].x - WhereX + 3) * ((o->Absolute.b.x - o->Absolute.a.x) / 5),
+                             o->Absolute.a.y + (Bombs[x].y - WhereY + 3) * ((o->Absolute.b.y - o->Absolute.a.y) / 5),
+                             makecol(255,165,0));
+        }
     }
 }
 
@@ -279,8 +383,12 @@ _PUBLIC void  FadeEffect ( void )
 _PUBLIC void  NextLevel ( void )
 {
     WhereX = 1; WhereY = 1;
+    WeaponActive = 0;
+    InitBombs();
+    InitWeaponBox();
     if (Level < 4) {
         Level++;
+        CurrentEnemyCount++;
         memcpy(MapDAT, MapDATLevels[Level - 1], sizeof(MapDAT));
     } else {
         MessageBox(&Me, "Congratulations!", "You have completed all levels!", MBB_OK);
@@ -295,20 +403,37 @@ _PUBLIC void  UpdateMove ( void )
 
     if (MapDAT[WhereX][WhereY] == 2)
     {
-        MessageBox(&Me, "Winner!", "Congratulations, you have found the exit!\n\nProceed to the next level...", MBB_OK);
+        endTime = clock();
+        totalTime = (double)(endTime - startTime) / CLOCKS_PER_SEC;
+        char buffer[50];
+        sprintf(buffer, "Congratulations, you have found the exit!\n\nTime taken: %.2f seconds", totalTime);
+        MessageBox(&Me, "Winner!", buffer, MBB_OK);
         NextLevel();
+        startTime = clock();
     }
 
-    for (i = 0; i < MAX_ENEMIES; i++)
+    if (!WeaponActive && WhereX == WeaponX && WhereY == WeaponY)
     {
-        if (WhereX == Enemies[i].x && WhereY == Enemies[i].y)
+        WeaponActive = 1;
+        MessageBox(&Me, "Weapon Activated", "You have picked up the weapon! Press Space to drop bombs.", MBB_OK);
+    }
+
+    for (i = 0; i < CurrentEnemyCount; i++)
+    {
+        if (Enemies[i].active && WhereX == Enemies[i].x && WhereY == Enemies[i].y)
         {
             MessageBox(&Me, "Game Over", "You were caught by an enemy!", MBB_OK);
-            CloseApp(&Me);
+            memcpy(MapDAT, MapDATLevels[Level - 1], sizeof(MapDAT));
+            InitEnemies();
+            WhereX = 1;
+            WhereY = 1;
+            InitBombs();
+            InitWeaponBox();
             return;
         }
     }
 
+    CheckBombs();
     WidgetDraw(WIDGET(Laby), NULL);
 }
 
@@ -320,9 +445,13 @@ l_bool GameEH(PWidget o, PEvent Event)
         {
             StartGame = true;
             Level = 1;
+            CurrentEnemyCount = 2;
             memcpy(MapDAT, MapDATLevels[0], sizeof(MapDAT));
             InitEnemies();
+            InitWeaponBox();
+            InitBombs();
             FadeEffect();
+            startTime = clock();
             return true;
         }
 
@@ -375,6 +504,13 @@ l_bool GameEH(PWidget o, PEvent Event)
 
                 return true;
             }
+
+            if (SCANCODE(Event, KEY_SPACE) && WeaponActive)
+            {
+                DropBomb();
+                UpdateMove();
+                return true;
+            }
         }
     }
 
@@ -409,7 +545,7 @@ l_bool AppEventHandler ( PWidget o, PEvent Event )
 
 l_int Main ( int argc, l_text *argv )
 {
-    PWindow w   = 0;
+    PWindow w = 0;
     TRect r;
 
     RectAssign(&r,0, 0, 250, 200);

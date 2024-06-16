@@ -1,4 +1,4 @@
-Message: Starting log to /syslogd.txt on Sun Jun 16 09:49:54 2024
+Message: Starting log to /syslogd.txt on Sun Jun 16 10:55:22 2024
 	doscore 2007-2023
 		KERNEL: Aura Kernel  VERSION: 0.9.8.0
 			DJGPP Release
@@ -681,30 +681,60 @@ Message: pretime
 Message: posttime
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/dock
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: Try to open ./xapps/nav.app (file: xapps/nav.app, Mode: rb)...
+Message: Opened (Size: 4221, adress of TFILE: 3433004)!
+Message: Loading application 'File Navigateur'(6fe300), FileName - 'xapps/nav.app'
+Message:          UID - 'app:nav' Version - 0x00000100
+Message: AppExtendersInit
+Message: Adding app to list
+Message: Calling @App->Main(Args)
+Message: TaskbarAdd 5ec278
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: DMS2 : Load file ./SYSTEM/ICONS/back.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/ICONS/back.bmp (file: ./SYSTEM/ICONS/back.bmp, Mode: rb)...
+Message: Opened (Size: 1254, adress of TFILE: 3432700)!
+Message: DMS2 : Load file ./SYSTEM/ICONS/back.bmp 
+Message: DMS2 : Load file ./SYSTEM/ICONS/forward.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/ICONS/forward.bmp (file: ./SYSTEM/ICONS/forward.bmp, Mode: rb)...
+Message: Opened (Size: 1254, adress of TFILE: 3432700)!
+Message: DMS2 : Load file ./SYSTEM/ICONS/forward.bmp 
+Message: DMS2 : Load file ./SYSTEM/ICONS/up.bmp using codec 424d5020 to type 00000003
+Message: Try to open ././SYSTEM/ICONS/up.bmp (file: ./SYSTEM/ICONS/up.bmp, Mode: rb)...
+Message: Opened (Size: 822, adress of TFILE: 3432700)!
+Message: DMS2 : Load file ./SYSTEM/ICONS/up.bmp 
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Warning: NULL pointer at TextDup.t
+Message: Could i report ?
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/dock
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
 Message: DMS2 : Load file SYSTEM/MENU/games/TIC-TAC-.LN using codec 00000000 to type 00000001
 Message: Try to open ./SYSTEM/MENU/games/TIC-TAC-.LN (file: SYSTEM/MENU/games/TIC-TAC-.LN, Mode: rb)...
-Message: Opened (Size: 13, adress of TFILE: 3433436)!
+Message: Opened (Size: 13, adress of TFILE: 3433340)!
 Message: DMS2 : Sub codec load emu SYSTEM/MENU/games/TIC-TAC-.LN 
 Message: Try to open ./xapps/ttt.app (file: xapps/ttt.app, Mode: rb)...
-Message: Opened (Size: 9560, adress of TFILE: 3433436)!
+Message: Opened (Size: 9560, adress of TFILE: 3433340)!
 Message: DMS2 : Load file SYSTEM/MENU/games/SNAKE.LN using codec 00000000 to type 00000001
 Message: Try to open ./SYSTEM/MENU/games/SNAKE.LN (file: SYSTEM/MENU/games/SNAKE.LN, Mode: rb)...
-Message: Opened (Size: 15, adress of TFILE: 3433436)!
+Message: Opened (Size: 15, adress of TFILE: 3433340)!
 Message: DMS2 : Sub codec load emu SYSTEM/MENU/games/SNAKE.LN 
 Message: Try to open ./xapps/snake.app (file: xapps/snake.app, Mode: rb)...
-Message: Opened (Size: 19708, adress of TFILE: 3433436)!
+Message: Opened (Size: 19708, adress of TFILE: 3433340)!
 Message: DMS2 : Load file SYSTEM/MENU/games/MINES.LN using codec 00000000 to type 00000001
 Message: Try to open ./SYSTEM/MENU/games/MINES.LN (file: SYSTEM/MENU/games/MINES.LN, Mode: rb)...
-Message: Opened (Size: 15, adress of TFILE: 3433436)!
+Message: Opened (Size: 15, adress of TFILE: 3433340)!
 Message: DMS2 : Sub codec load emu SYSTEM/MENU/games/MINES.LN 
 Message: Try to open ./xapps/mines.app (file: xapps/mines.app, Mode: rb)...
-Message: Opened (Size: 18495, adress of TFILE: 3433436)!
+Message: Opened (Size: 18495, adress of TFILE: 3433340)!
 Message: DMS2 : Load file SYSTEM/MENU/games/LABY.LN using codec 00000000 to type 00000001
 Message: Try to open ./SYSTEM/MENU/games/LABY.LN (file: SYSTEM/MENU/games/LABY.LN, Mode: rb)...
-Message: Opened (Size: 14, adress of TFILE: 3433436)!
+Message: Opened (Size: 14, adress of TFILE: 3433340)!
 Message: DMS2 : Sub codec load emu SYSTEM/MENU/games/LABY.LN 
 Message: Try to open ./xapps/laby.app (file: xapps/laby.app, Mode: rb)...
-Message: Opened (Size: 17926, adress of TFILE: 3433436)!
+Message: Opened (Size: 19634, adress of TFILE: 3433340)!
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/dock
 Message: DMS2 : Load file SYSTEM/MENU/games/LABY.LN using codec 00000000 to type 00000001
 Message: Try to open ./SYSTEM/MENU/games/LABY.LN (file: SYSTEM/MENU/games/LABY.LN, Mode: rb)...
@@ -715,234 +745,225 @@ Message: Try to open ./SYSTEM/MENU/games/LABY.LN (file: SYSTEM/MENU/games/LABY.L
 Message: Opened (Size: 14, adress of TFILE: 3433004)!
 Message: DMS2 : Sub codec load emu SYSTEM/MENU/games/LABY.LN 
 Message: Try to open ./xapps/laby.app (file: xapps/laby.app, Mode: rb)...
-Message: Opened (Size: 17926, adress of TFILE: 3432892)!
-Message: Loading application 'Laby'(5ec328), FileName - 'xapps/laby.app'
+Message: Opened (Size: 19634, adress of TFILE: 3432892)!
+Message: Loading application 'Laby'(5f42b8), FileName - 'xapps/laby.app'
 Message:          UID - '' Version - 0x00000200
 Message: AppExtendersInit
 Message: Adding app to list
 Message: Calling @App->Main(Args)
-Message: TaskbarAdd 5f90e0
+Message: TaskbarAdd 5febd8
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
 Message: Could i report ?
 Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
 Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
-Message: Opened (Size: 51244, adress of TFILE: 3433532)!
+Message: Opened (Size: 51244, adress of TFILE: 3433564)!
 Message: DMS2 : Load file /system/System/sounds/info.mp3 
-Message: TaskbarAdd 5f92d0
+Message: TaskbarAdd 5fbf50
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: Playing Stream 6210096
-Message: Executing 5f92d0
-Message: Catch message( 5f92d0, ffff4002 )
+Message: Playing Stream 6286792
+Message: Executing 5fbf50
+Message: Catch message( 5fbf50, ffff4002 )
 Message: Return Message ffff4002
-Message: Executing 5f92d0
-Message: Catch message( 5f92d0, ffff8001 )
+Message: Executing 5fbf50
+Message: Catch message( 5fbf50, ffff8001 )
 Message: Return Message ffff8001
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: TaskbarRemove 5f92d0...
-Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: ...finished
-Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
-Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
-Message: Opened (Size: 51244, adress of TFILE: 3433532)!
-Message: DMS2 : Load file /system/System/sounds/info.mp3 
-Message: TaskbarAdd 5f72b0
-Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: Playing Stream 6263600
-Message: Executing 5f72b0
-Message: Catch message( 5f72b0, ffff4002 )
-Message: Return Message ffff4002
-Message: Executing 5f72b0
-Message: Catch message( 5f72b0, ffff8001 )
-Message: Return Message ffff8001
-Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: TaskbarRemove 5f72b0...
-Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: ...finished
-Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
-Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
-Message: Opened (Size: 51244, adress of TFILE: 3433532)!
-Message: DMS2 : Load file /system/System/sounds/info.mp3 
-Message: TaskbarAdd 5f74a0
-Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: Playing Stream 6255472
-Message: Executing 5f74a0
-Message: Catch message( 5f74a0, ffff4002 )
-Message: Return Message ffff4002
-Message: Executing 5f74a0
-Message: Catch message( 5f74a0, ffff8001 )
-Message: Return Message ffff8001
-Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: TaskbarRemove 5f74a0...
+Message: TaskbarRemove 5fbf50...
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
 Message: ...finished
 Message: pretime
 Message: posttime
 Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
 Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
-Message: Opened (Size: 51244, adress of TFILE: 3433532)!
+Message: Opened (Size: 51244, adress of TFILE: 3433436)!
 Message: DMS2 : Load file /system/System/sounds/info.mp3 
-Message: TaskbarAdd 5f74a0
+Message: TaskbarAdd 5fc1a8
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: Playing Stream 6256744
-Message: Executing 5f74a0
-Message: Catch message( 5f74a0, ffff4002 )
+Message: Playing Stream 6275088
+Message: Executing 5fc1a8
+Message: Catch message( 5fc1a8, ffff4002 )
 Message: Return Message ffff4002
-Message: Executing 5f74a0
-Message: Pause Stream 6256744
-Message: Catch message( 5f74a0, ffff8001 )
+Message: Executing 5fc1a8
+Message: Catch message( 5fc1a8, ffff8001 )
 Message: Return Message ffff8001
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: TaskbarRemove 5f74a0...
+Message: TaskbarRemove 5fc1a8...
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
 Message: ...finished
 Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
 Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
-Message: Opened (Size: 51244, adress of TFILE: 3433532)!
+Message: Opened (Size: 51244, adress of TFILE: 3433324)!
 Message: DMS2 : Load file /system/System/sounds/info.mp3 
-Message: TaskbarAdd 5f7968
+Message: TaskbarAdd 5fc338
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: Playing Stream 6256136
-Message: Executing 5f7968
-Message: pretime
-Message: posttime
-Message: Catch message( 5f7968, ffff4002 )
+Message: Playing Stream 6275776
+Message: Executing 5fc338
+Message: Catch message( 5fc338, ffff4002 )
 Message: Return Message ffff4002
-Message: Executing 5f7968
-Message: Catch message( 5f7968, ffff8001 )
+Message: Executing 5fc338
+Message: Catch message( 5fc338, ffff8001 )
 Message: Return Message ffff8001
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: TaskbarRemove 5f7968...
+Message: TaskbarRemove 5fc338...
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
 Message: ...finished
-Message: Pause Stream 6256136
-Message: pretime
-Message: posttime
+Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
+Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
+Message: Opened (Size: 51244, adress of TFILE: 3433324)!
+Message: DMS2 : Load file /system/System/sounds/info.mp3 
+Message: TaskbarAdd 5fc5b0
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/dock
-Message: TaskbarRemove 5f90e0...
+Message: Playing Stream 6276176
+Message: Executing 5fc5b0
+Message: Catch message( 5fc5b0, ffff4002 )
+Message: Return Message ffff4002
+Message: Executing 5fc5b0
+Message: Catch message( 5fc5b0, ffff8001 )
+Message: Return Message ffff8001
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: TaskbarRemove 5fc5b0...
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
 Message: ...finished
-Message: Close :: Laby
-Message: AppExtendersDeInit
-Message: Free Application :: Laby
+Message: Pause Stream 6276176
+Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
+Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
+Message: Opened (Size: 51244, adress of TFILE: 3433436)!
+Message: DMS2 : Load file /system/System/sounds/info.mp3 
+Message: TaskbarAdd 5fc6e8
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: Playing Stream 6276720
+Message: Executing 5fc6e8
+Message: Catch message( 5fc6e8, ffff4002 )
+Message: Return Message ffff4002
+Message: Executing 5fc6e8
+Message: Catch message( 5fc6e8, ffff8001 )
+Message: Return Message ffff8001
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: TaskbarRemove 5fc6e8...
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: ...finished
 Message: pretime
 Message: posttime
 Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
 Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
-Message: Opened (Size: 51244, adress of TFILE: 3433116)!
+Message: Opened (Size: 51244, adress of TFILE: 3433436)!
 Message: DMS2 : Load file /system/System/sounds/info.mp3 
-Message: TaskbarAdd 5f90e0
+Message: TaskbarAdd 5fc720
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Message: Playing Stream 7332608
-Message: Executing 5f90e0
-Message: Catch message( 5f90e0, ffff4002 )
+Message: Playing Stream 6277824
+Message: Executing 5fc720
+Message: Pause Stream 6277824
+Message: Catch message( 5fc720, ffff4002 )
 Message: Return Message ffff4002
-Message: Executing 5f90e0
-Message: Catch message( 5f90e0, ffff8004 )
-Message: Return Message ffff8004
+Message: Executing 5fc720
+Message: Catch message( 5fc720, ffff8001 )
+Message: Return Message ffff8001
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
-Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/dock
-Message: TaskbarRemove 5f90e0...
+Message: TaskbarRemove 5fc720...
 Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
 Message: ...finished
-Message: +++ SYSTEM GOING DOWN FOR HALT +++
-
-Message: Shutting down DynLd...
-Message: Close :: Desktop
-Message: AppExtendersDeInit
-Message: Close :: Control Panel directory deamon
-Message: AppExtendersDeInit
-Message: Close :: TabBook Widget
-Message: AppExtendersDeInit
-Message: Close :: I/O Dialogs
-Message: AppExtendersDeInit
-Message: Close :: File Management System v2
-Message: AppExtendersDeInit
-Message: Close :: Toolbar Widget
-Message: AppExtendersDeInit
-Message: Close :: Combobox widget
-Message: AppExtendersDeInit
-Message: Close :: Listview Widget
-Message: AppExtendersDeInit
-Message: Close :: Slider Widget
-Message: AppExtendersDeInit
-Message: Close :: Groupbox Widget
-Message: AppExtendersDeInit
-Message: Close :: Treeview Widget
-Message: AppExtendersDeInit
-Message: Close :: Listbox Widget
-Message: AppExtendersDeInit
-Message: Close :: Window Widget
-Message: AppExtendersDeInit
-Message: Close :: MP3 loader (Allegro MP3)
-Message: AppExtendersDeInit
-Message: Close :: Textbox Widget
-Message: AppExtendersDeInit
-Message: Close :: Scrollbar Widget
-Message: AppExtendersDeInit
-Message: Close :: Canvas widget
-Message: AppExtendersDeInit
-Message: Close :: Menu Widget
-Message: AppExtendersDeInit
-Message: Close :: Checkbox Widget
-Message: AppExtendersDeInit
-Message: Close :: Progressbar Widget
-Message: AppExtendersDeInit
-Message: Close :: Label Widget
-Message: AppExtendersDeInit
-Message: Close :: Button Widget
-Message: AppExtendersDeInit
-Message: Close :: Widget System
-Message: AppExtendersDeInit
-Message: Close :: Skin System
-Message: Skin system destroyed a total of '0' skin items
-Message: AppExtendersDeInit
-Message: Close :: Sound System
-Message: AppExtendersDeInit
-Message: Close :: Clipboard
-Message: AppExtendersDeInit
-Message: Close :: Graphics Extender
-Message: AppExtendersDeInit
-Message: Close :: JPG (Alleg) loader/saver
-Message: AppExtendersDeInit
-Message: Close :: libpng + ldpng
-Message: AppExtendersDeInit
-Message: Close :: BMP loader/saver
-Message: AppExtendersDeInit
-Message: Free Application :: Desktop
-Message: Free Application :: Control Panel directory deamon
-Message: Free Application :: TabBook Widget
-Message: Free Application :: I/O Dialogs
-Message: Free Application :: File Management System v2
-Message: Free Application :: Toolbar Widget
-Message: Free Application :: Combobox widget
-Message: Free Application :: Listview Widget
-Message: Free Application :: Slider Widget
-Message: Free Application :: Groupbox Widget
-Message: Free Application :: Treeview Widget
-Message: Free Application :: Listbox Widget
-Message: Free Application :: Window Widget
-Message: Free Application :: MP3 loader (Allegro MP3)
-Message: Free Application :: Textbox Widget
-Message: Free Application :: Scrollbar Widget
-Message: Free Application :: Canvas widget
-Message: Free Application :: Menu Widget
-Message: Free Application :: Checkbox Widget
-Message: Free Application :: Progressbar Widget
-Message: Free Application :: Label Widget
-Message: Free Application :: Button Widget
-Message: Free Application :: Widget System
-Message: Free Application :: Skin System
-Message: Free Application :: Sound System
-Message: Free Application :: Clipboard
-Message: Free Application :: Graphics Extender
-Message: Free Application :: JPG (Alleg) loader/saver
-Message: Free Application :: libpng + ldpng
-Message: Free Application :: BMP loader/saver
-Message: DynLd Stopped
-Message: Saving registry...
-Message: Try to open ./system/xettings.dat (file: system/xettings.dat, Mode: wb)...
-Message: Opened (Size: 0, adress of TFILE: 3434156)!
-Message: Registry saved
-Message: Registry freed
-Message: Logging stopped, closing log file
+Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
+Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
+Message: Opened (Size: 51244, adress of TFILE: 3433436)!
+Message: DMS2 : Load file /system/System/sounds/info.mp3 
+Message: TaskbarAdd 5fcb88
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: Playing Stream 6277136
+Message: Executing 5fcb88
+Message: Catch message( 5fcb88, ffff4002 )
+Message: Return Message ffff4002
+Message: Executing 5fcb88
+Message: Catch message( 5fcb88, ffff8001 )
+Message: Return Message ffff8001
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: TaskbarRemove 5fcb88...
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: ...finished
+Message: pretime
+Message: posttime
+Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
+Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
+Message: Opened (Size: 51244, adress of TFILE: 3433436)!
+Message: DMS2 : Load file /system/System/sounds/info.mp3 
+Message: TaskbarAdd 5fce30
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: Playing Stream 6278392
+Message: Executing 5fce30
+Message: Pause Stream 6278392
+Message: Catch message( 5fce30, ffff4002 )
+Message: Return Message ffff4002
+Message: Executing 5fce30
+Message: Catch message( 5fce30, ffff8001 )
+Message: Return Message ffff8001
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: TaskbarRemove 5fce30...
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: ...finished
+Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
+Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
+Message: Opened (Size: 51244, adress of TFILE: 3433324)!
+Message: DMS2 : Load file /system/System/sounds/info.mp3 
+Message: TaskbarAdd 5fd080
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: Playing Stream 6278944
+Message: Executing 5fd080
+Message: Pause Stream 6278944
+Message: pretime
+Message: posttime
+Message: pretime
+Message: posttime
+Message: Catch message( 5fd080, ffff4002 )
+Message: Return Message ffff4002
+Message: Executing 5fd080
+Message: Catch message( 5fd080, ffff8001 )
+Message: Return Message ffff8001
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: TaskbarRemove 5fd080...
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: ...finished
+Message: pretime
+Message: posttime
+Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
+Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
+Message: Opened (Size: 51244, adress of TFILE: 3433324)!
+Message: DMS2 : Load file /system/System/sounds/info.mp3 
+Message: TaskbarAdd 5fd210
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: Playing Stream 6279576
+Message: Executing 5fd210
+Message: Pause Stream 6279576
+Message: Catch message( 5fd210, ffff4002 )
+Message: Return Message ffff4002
+Message: Executing 5fd210
+Message: Catch message( 5fd210, ffff8001 )
+Message: Return Message ffff8001
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: TaskbarRemove 5fd210...
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: ...finished
+Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
+Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
+Message: Opened (Size: 51244, adress of TFILE: 3433436)!
+Message: DMS2 : Load file /system/System/sounds/info.mp3 
+Message: TaskbarAdd 5fd3e8
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: Playing Stream 6280048
+Message: Executing 5fd3e8
+Message: Catch message( 5fd3e8, ffff4002 )
+Message: Return Message ffff4002
+Message: Executing 5fd3e8
+Message: Catch message( 5fd3e8, ffff8001 )
+Message: Return Message ffff8001
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: TaskbarRemove 5fd3e8...
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: ...finished
+Message: Pause Stream 6280048
+Message: DMS2 : Load file /system/System/sounds/info.mp3 using codec 4d503320 to type 00000009
+Message: Try to open ./System/sounds/info.mp3 (file: System/sounds/info.mp3, Mode: rb)...
+Message: Opened (Size: 51244, adress of TFILE: 3433436)!
+Message: DMS2 : Load file /system/System/sounds/info.mp3 
+Message: TaskbarAdd 93aac0
+Warning: REGISTRY : Unknow key /USER/DESKTOP/transparency/window_list
+Message: Playing Stream 6280488
+Message: Execut

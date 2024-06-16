@@ -29,12 +29,15 @@ Enemy Enemies[MAX_ENEMIES];
 Bomb Bombs[MAX_BOMBS];
 int WeaponX, WeaponY;
 int WeaponActive = 0;
-int CurrentEnemyCount = 2; // Start with 2 enemies
+int CurrentEnemyCount = 2;
 
 _PUBLIC l_int WhereX = 1;
 _PUBLIC l_int WhereY = 1;
 _PUBLIC PCanvas Laby = 0;
 _PUBLIC l_int Level  = 1;
+
+clock_t startTime, endTime;
+double totalTime;
 
 /**
 *   Map information
@@ -132,7 +135,7 @@ l_char MapDATLevels[4][MAPSIZE][MAPSIZE] =
         { 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0 },
         { 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0 },
         { 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0 },
-        { 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0 },
+        { 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0 },
         { 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
         { 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0 },
         { 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0 },
@@ -141,7 +144,6 @@ l_char MapDATLevels[4][MAPSIZE][MAPSIZE] =
         { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
     },
 };
-
 
 void InitEnemies()
 {
@@ -156,8 +158,8 @@ void InitEnemies()
 
 void InitWeaponBox()
 {
-    WeaponX = 10;
-    WeaponY = 10;
+    WeaponX = rand() % MAPSIZE;
+    WeaponY = rand() % MAPSIZE;
 }
 
 void InitBombs()
@@ -351,7 +353,7 @@ _PUBLIC void  FadeEffectDraw ( PWidget o, p_bitmap buffer, PRect w )
     textout_centre_ex(buffer, font, "Press Enter to Start Game", (o->Absolute.a.x + o->Absolute.b.x) / 2, (o->Absolute.a.y + o->Absolute.b.y) / 2, makecol(255, 255, 255), -1);
 }
 
-_PUBLIC void  FadeEffect ( void )
+_PUBLIC void  FadeEffect ( l_text story )
 {
     WIDGET(Laby)->Draw = &FadeEffectDraw;
 
@@ -363,6 +365,8 @@ _PUBLIC void  FadeEffect ( void )
 
         Fade++;
     }
+
+    MessageBox(&Me, "Dawn of Adventure", story, MBB_OK);
 
     while (Fade > 0)
     {
@@ -380,22 +384,37 @@ _PUBLIC void  FadeEffect ( void )
 
 _PUBLIC void  NextLevel ( void )
 {
-    WhereX = 1;
-    WhereY = 1;
+    WhereX = 1; WhereY = 1;
     WeaponActive = 0;
-    CurrentEnemyCount++;
-    if (CurrentEnemyCount > MAX_ENEMIES) CurrentEnemyCount = MAX_ENEMIES;
     InitBombs();
     InitWeaponBox();
+    CurrentEnemyCount = Level + 1; // Increase enemy count with each level
+    InitEnemies();
+
     if (Level < 4) {
         Level++;
         memcpy(MapDAT, MapDATLevels[Level - 1], sizeof(MapDAT));
+        switch(Level) {
+            case 2:
+                FadeEffect("Level 2: The darkness deepens. You must find the light.");
+                break;
+            case 3:
+                FadeEffect("Level 3: The maze becomes treacherous. Beware of traps.");
+                break;
+            case 4:
+                FadeEffect("Level 4: The final challenge. All your skills will be tested.");
+                break;
+        }
     } else {
         MessageBox(&Me, "Congratulations!", "You have completed all levels!", MBB_OK);
+        endTime = clock();
+        totalTime = ((double) (endTime - startTime)) / CLOCKS_PER_SEC;
+        char timeMessage[50];
+        sprintf(timeMessage, "Your time: %.2f seconds", totalTime);
+        MessageBox(&Me, "Game Over", timeMessage, MBB_OK);
     }
 
-    FadeEffect();
-    InitEnemies();
+    FadeEffect("");
 }
 
 _PUBLIC void  UpdateMove ( void )
@@ -404,7 +423,11 @@ _PUBLIC void  UpdateMove ( void )
 
     if (MapDAT[WhereX][WhereY] == 2)
     {
-        MessageBox(&Me, "Winner!", "Congratulations, you have found the exit!\n\nProceed to the next level...", MBB_OK);
+        endTime = clock();
+        totalTime = ((double) (endTime - startTime)) / CLOCKS_PER_SEC;
+        char timeMessage[50];
+        sprintf(timeMessage, "You have found the exit in %.2f seconds! Proceed to the next level...", totalTime);
+        MessageBox(&Me, "Winner!", timeMessage, MBB_OK);
         NextLevel();
     }
 
@@ -418,15 +441,9 @@ _PUBLIC void  UpdateMove ( void )
     {
         if (Enemies[i].active && WhereX == Enemies[i].x && WhereY == Enemies[i].y)
         {
-            MessageBox(&Me, "Game Over", "You were caught by an enemy!", MBB_OK);
-            Level--; // Decrease level to repeat the current level
-            CurrentEnemyCount--; // Decrease enemy count
-            if (CurrentEnemyCount < 2) CurrentEnemyCount = 2;
-            memcpy(MapDAT, MapDATLevels[Level], sizeof(MapDAT));
-            InitEnemies();
-            InitWeaponBox();
-            InitBombs();
-            FadeEffect();
+            MessageBox(&Me, "Caught!", "You were caught by an enemy! Restarting level...", MBB_OK);
+            WhereX = 1;
+            WhereY = 1;
             return;
         }
     }
@@ -443,11 +460,13 @@ l_bool GameEH(PWidget o, PEvent Event)
         {
             StartGame = true;
             Level = 1;
+            CurrentEnemyCount = 2;
             memcpy(MapDAT, MapDATLevels[0], sizeof(MapDAT));
             InitEnemies();
             InitWeaponBox();
             InitBombs();
-            FadeEffect();
+            startTime = clock();
+            FadeEffect("Level 1: You are entering the labyrinth. Find the exit and avoid enemies.");
             return true;
         }
 
