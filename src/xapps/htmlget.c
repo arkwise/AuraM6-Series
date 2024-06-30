@@ -30,11 +30,10 @@
 #define HTTPVER10   "HTTP/1.0"
 #define HTTPVER11   "HTTP/1.1"
 #define strn(s)     s, sizeof(s)-1
-#define MSG_GET_IT		100001
-#define MSG_SELECTFILE 	0x00010002
+#define MSG_GET_IT        100001
+#define MSG_SELECTFILE    0x00010002
 
 typedef unsigned long  DWORD;
-
 
 l_ulong AppVersion = ULONG_ID(0, 0, 0, 1);
 char AppName[] = "HtmlGet";
@@ -81,17 +80,20 @@ long header(const char *path) {
     contentlength = LONG_MAX;
     if ((len = sock_getline(sock, buffer, BUFFERSIZE)) <= 0) {
         DebugMessage("EOF from server");
+        MessageBox(&Me, "Error", "EOF from server", MBB_OK);
         return (-1L);
     }
     if (strncmp(s = buffer, strn(HTTPVER10)) &&
             strncmp(s, strn(HTTPVER11))) {
         DebugMessage("Not a HTTP/1.[01] server");
+        MessageBox(&Me, "Error", "Not a HTTP/1.[01] server", MBB_OK);
         return (-1L);
     }
 
     s += sizeof (HTTPVER10) - 1;
     if ((i = strspn(s, " \t")) <= 0) {
         DebugMessage("Malformed HTTP/1.[01] line");
+        MessageBox(&Me, "Error", "Malformed HTTP/1.[01] line", MBB_OK);
         return (-1L);
     }
     s += i;
@@ -99,10 +101,12 @@ long header(const char *path) {
     sscanf(s, "%3d", &response);
     if (response == 401) {
         DebugMessage("%s: authorisation failed!", path);
+        MessageBox(&Me, "Error", "Authorisation failed", MBB_OK);
         return (-1L);
     } else if (response != 200 && response != 301 &&
             response != 302 && response != 304) {
-        DebugMessage("%s: %s\n", path, s);
+        DebugMessage("%s: %s", path, s);
+        MessageBox(&Me, "Error", s, MBB_OK);
         contentlength = -1L;
     }
     while ((len = sock_getline(sock, buffer, BUFFERSIZE)) > 0) {
@@ -115,6 +119,7 @@ long header(const char *path) {
             }
         } else if (strchr(" \t", buffer[0])) {
             DebugMessage("Warning: continuation line encountered");
+            MessageBox(&Me, "Warning", "Continuation line encountered", MBB_OK);
         }
     }
     return (response == 304 ? 0L : contentlength);
@@ -126,7 +131,7 @@ int htget(const char *host, int port, const char *path) {
     int status = 0;
     int connected = 0;
     int completed = 0;
-    int i/*,use_proxy = proxy_host[0] != 0*/;
+    int i;
     long length, contentlength = 0L;
     const char *name;
     char *buf = buffer;
@@ -139,22 +144,26 @@ int htget(const char *host, int port, const char *path) {
     name = host;
 
     if ((hostaddr = lookup_host(name, NULL)) == 0) {
-        //sprintf(line, dom_strerror(dom_errno));
-        DebugMessage(line);
-        MessageBox(&Me, "Error Message", line, MBB_OK);
+        DebugMessage("Error: Unable to resolve host");
+        MessageBox(&Me, "Error", "Unable to resolve host", MBB_OK);
         return (1);
     }
 
     if (!tcp_open(sock, 0, hostaddr, port, NULL)) {
-        sprintf(line, "Cannot connect to `%s'\n", name);
+        sprintf(line, "Cannot connect to `%s'", name);
         DebugMessage(line);
-        MessageBox(&Me, "Error Message", line, MBB_OK);
+        MessageBox(&Me, "Error", line, MBB_OK);
         return (1);
     }
 
     sock_setbuf(sock, malloc(WINDOWSIZE), WINDOWSIZE);
 
     sock_wait_established(sock, sock_delay, NULL, &status);
+    if (status != 1) {
+        DebugMessage("Error: TCP connection not established");
+        MessageBox(&Me, "Error", "TCP connection not established", MBB_OK);
+        return (1);
+    }
     connected = 1;
     completed = 1;
     sock_tick(sock, &status);
@@ -165,12 +174,13 @@ int htget(const char *host, int port, const char *path) {
     buf += sprintf(buf, "\r\n");
     sock_fastwrite(sock, buffer, buf - buffer);
 
-    if ((contentlength = header(path)) >= 0L /*&& !headeronly*/) {
+    if ((contentlength = header(path)) >= 0L) {
         DebugMessage("contentlength: %lu", contentlength);
         if (outputfile) {
             f = FileOpen(outputfile, "wb");
 
             if (f == NULL) {
+                MessageBox(&Me, "Error", "Unable to open output file", MBB_OK);
                 goto close_up;
             }
         }
@@ -179,14 +189,16 @@ int htget(const char *host, int port, const char *path) {
         while ((i = sock_read(sock, buffer, BUFFERSIZE)) > 0) {
             FileWrite(buffer, 1, i, f);
             length += i;
-            LabelSetText(LblProgress, "Got %lu bytes", length);
+            sprintf(line, "Got %lu bytes", length);
+            LabelSetText(LblProgress, line);
             WidgetDrawAll(WIDGET(LblProgress));
         }
         FileClose(f);
         if (contentlength != LONG_MAX && length != contentlength) {
-            sprintf(line, "Warning, actual length = %ld, content length = %ld\n",
+            sprintf(line, "Warning, actual length = %ld, content length = %ld",
                     length, contentlength);
             DebugMessage(line);
+            MessageBox(&Me, "Warning", line, MBB_OK);
         }
     }
 
@@ -197,14 +209,13 @@ close_up:
 sock_err:
     DebugMessage("sock_err:");
     if (status == -1) {
-        sprintf(line, "`%s' %s\n", name, sockerr(sock));
+        sprintf(line, "`%s' %s", name, sockerr(sock));
         DebugMessage(line);
-        MessageBox(&Me, "Error Message", line, MBB_OK);
+        MessageBox(&Me, "Error", line, MBB_OK);
     }
     if (!connected) {
         DebugMessage("Could not get connected");
-        MessageBox(&Me, "Error Message", "Could not get connected", MBB_OK);
-        //   puts ("Could not get connected");
+        MessageBox(&Me, "Error", "Could not get connected", MBB_OK);
     }
     return (!completed || contentlength < 0L);
 }
@@ -223,26 +234,24 @@ int GetURL(char *URL) {
     char line[1024];
     char *host, *path, *s;
     int port = 80;
-    int ch, status;
     buffer = malloc(BUFFERSIZE);
     sock = malloc(sizeof (*sock));
     if (!buffer || !sock) {
         DebugMessage("No memory");
-        MessageBox(&Me, "Error Message", "No memory", MBB_OK);
+        MessageBox(&Me, "Error", "No memory", MBB_OK);
         return (-1);
     }
 
     if (!strnicmp(URL, strn("http://")))
         URL += sizeof ("http://") - 1;
 
-    if ((path = strchr(URL, '/')) == NULL) /* separate out the path */ {
+    if ((path = strchr(URL, '/')) == NULL) {
         host = URL;
         path = "/";
     } else {
         if ((host = calloc(path - URL + 1, 1)) == NULL) {
-            sprintf(line, PROGRAM ": Out of memory");
-            DebugMessage(line);
-            MessageBox(&Me, "Error Message", "Out of memory", MBB_OK);
+            DebugMessage("Out of memory");
+            MessageBox(&Me, "Error", "Out of memory", MBB_OK);
             return (1);
         }
         strncat(host, URL, path - URL);
@@ -256,9 +265,11 @@ int GetURL(char *URL) {
     set_cnf_hook();
     sock_init();
 
-    sprintf(line, "Host: %s\nPort: %d\nPath: %s\n", host, port, path);
+    sprintf(line, "Host: %s\nPort: %d\nPath: %s", host, port, path);
     DebugMessage(line);
-    status = htget(host, port, path);
+    int status = htget(host, port, path);
+    free(buffer);
+    free(sock);
     return (status);
 }
 
@@ -282,13 +293,11 @@ l_bool AppEventHandler(PWidget o, PEvent Event) {
                 CloseApp(&Me);
                 return true;
             }
-                break;
             case WM_ABOUT:
             {
                 MessageBox(&Me, "About HTML Get", "HTML Get \nAura HTTP Get\n\nCopyright (c) 2013 Finn Technologies. All rights reserved.", MBB_OK);
                 return true;
             }
-                break;
             case MSG_SELECTFILE:
             {
                 File = IOBox("Save As", IOBOX_SAVE, NULL, NULL, false);
@@ -296,13 +305,13 @@ l_bool AppEventHandler(PWidget o, PEvent Event) {
                     TextBoxSetText(TxtTo, "%s", File);
                     free(File);
                 }
+                return true;
             }
-                break;
             case MSG_GET_IT:
             {
                 GetIt();
+                return true;
             }
-                break;
         }
     }
     return false;
@@ -322,7 +331,7 @@ l_int Main(int argc, l_text *argv) {
 
     WidgetSize(&r, 75, 5, 205, 20);
     TxtFromHttp = CreateTextbox(&Me, r, TBF_EDITABLE);
-    InsertWidget(WIDGET(w), WIDGET(TxtFromHttp)); //
+    InsertWidget(WIDGET(w), WIDGET(TxtFromHttp));
 
     WidgetSize(&r, 10, 30, 15, 20);
     LblTo = CreateLabel(&Me, r, "To: ");
@@ -350,6 +359,3 @@ l_int Main(int argc, l_text *argv) {
 
 void Close(void) {
 }
-
-
-

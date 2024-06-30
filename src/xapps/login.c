@@ -15,12 +15,12 @@
 #include "treeview.h"
 #include "listview.h"
 ////////////////////////////////////////////////////////////////////////////////
-l_ulong AppVersion	= ULONG_ID(0,0,1,0);
-char AppName[]		= "Login";
-l_uid	nUID		= "app:login";
-l_uid NeededLibs[]	= { "menu", "window","fms2","textbox","treeview","widget","listview", "" };
+l_ulong AppVersion = ULONG_ID(0, 0, 1, 0);
+char AppName[] = "Login";
+l_uid nUID = "app:login";
+l_uid NeededLibs[] = { "menu", "window", "fms2", "textbox", "treeview", "widget", "listview", "" };
 ////////////////////////////////////////////////////////////////////////////////
-PWindow w	= 0;
+PWindow w = 0;
 PTreeview t;
 PListview s;
 PTextbox ext;
@@ -33,144 +33,166 @@ long Userkey = 0;
 l_text y;
 PRegKey thekey;
 
-
-#define MSG_SELECTFILE 	0x00010002
-#define MSG_LOGIN 	0x00010003
-#define MSG_TREESEL	0x00010004
+#define MSG_SELECTFILE 0x00010002
+#define MSG_LOGIN 0x00010003
+#define MSG_TREESEL 0x00010004
 
 ////////////////////////////////////////////////////////////////////////////////
-l_bool AppEventHandler ( PWidget o, PEvent Event )
+l_bool AppEventHandler(PWidget o, PEvent Event)
 {
-	if ( Event->Type == EV_MESSAGE )
+	if (Event->Type == EV_MESSAGE)
 	{
-		switch ( Event->Message )
+		switch (Event->Message)
 		{
-			case WM_CLOSE:
-			{
+		case WM_CLOSE:
+		{
 			MessageBox(&Me, "Error", "You must be logged in to do that.", MBB_OK);
 			return true;
-			}
-			break;
-			
+		}
+		break;
 
-			case WM_ABOUT:
-			{
-				MessageBox(&Me, "About ''Login''", "Copyright (c) 2010 Finn Technologies, Chase Finn. All rights reserved.", MBB_OK);
-				return true;
-			}
-			break;
+		case WM_ABOUT:
+		{
+			MessageBox(&Me, "About 'Login'", "Copyright (c) 2010 Finn Technologies, Chase Finn. All rights reserved.", MBB_OK);
+			return true;
+		}
+		break;
 
-
-			case MSG_TREESEL:
-			{
-
-
+		case MSG_TREESEL:
+		{
 			if (t->Sel) {
 				PRegKey thekey = ResolveKey((l_text)t->Sel->Key);
 				if (thekey->Type == RKT_NODATA)
-				{ 
-					Userkey = 1; 
-				} else
+				{
+					Userkey = 1;
+				}
+				else
 				{
 					Value = thekey->Data;
-					TextBoxSetText(sext,Value);
+					TextBoxSetText(sext, Value);
 					Userkey = 2;
 				}
-			} else {
-				Userkey = 0; 
 			}
-				return true;
+			else {
+				Userkey = 0;
 			}
-			break;
+			return true;
+		}
+		break;
 
-			case MSG_LOGIN:
+		case MSG_LOGIN:
+		{
+			if (Userkey == 0)
 			{
-				if (Userkey = 0) 
-				{
-					MessageBox(&Me, "Select Username", "You must select a username from the list", MBB_OK);
-				} else {				
-					x = ext->Text;
-					y = sext->Text;
-					if ( x == y ) {
-						MessageBox(&Me, "YAY", "Everything Checks OUt!", MBB_OK);
-					} else if ( x != y ) {
-						MessageBox(&Me, "Invalid Password", "You have entered an incorrect password for the selected user", MBB_OK);
-					}
-				}
-				return true;
+				MessageBox(&Me, "Select Username", "You must select a username from the list", MBB_OK);
 			}
-			break;
-
+			else {
+				x = ext->Text;
+				y = sext->Text;
+				if (TextCompare(x, y) == 0) {
+					MessageBox(&Me, "YAY", "Everything Checks Out!", MBB_OK);
+				}
+				else {
+					MessageBox(&Me, "Invalid Password", "You have entered an incorrect password for the selected user", MBB_OK);
+				}
+			}
+			return true;
+		}
+		break;
 		}
 	}
 
 	return true;
 }
 ////////////////////////////////////////////////////////////////////////////////
-void  GenerateSubs ( ) {
+void GenerateSubs()
+{
 	PRegKey a, b;
 	PRegKey p = ResolveKey("/USERS/");
 	l_text Path;
-	
-	if ( !p ) return;
-	
+
+	if (!p) return;
+
 	EmptySubTreeItems(t->Items);
-	
-	if ( !p->Last ) return;
-	
+
+	if (!p->Last) return;
+
 	a = b = p->Last->Next;
 	do {
-		Path = FileNameToPath("/USERS/",a->Name);
-		AddTreeItem(t->Items,a->Name,Path,UserIcon,NULL);
+		Path = FileNameToPath("/USERS/", a->Name);
+		AddTreeItem(t->Items, a->Name, Path, UserIcon, NULL);
 		free(Path);
 		a = a->Next;
-	} while ( a != b );
-	
+	} while (a != b);
+
 	WidgetDrawAll(WIDGET(t));
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////
-l_int Main ( int argc, l_text *argv )
+void GenerateSubMenu(PMenuItem itm, void* Args)
+{
+	l_text arg = (l_text)Args;
+
+	if (TextCompare(arg, "File") == 0) {
+		itm->SubMenu = NewMenu(
+			NewMenuItem("Exit", NULL, WM_CLOSE, 0, NULL, NULL)
+		);
+	}
+	else if (TextCompare(arg, "Help") == 0) {
+		itm->SubMenu = NewMenu(
+			NewMenuItem("About", NULL, WM_ABOUT, 0, NULL, NULL)
+		);
+	}
+}
+
+l_int Main(int argc, l_text* argv)
 {
 	TRect r, wr;
 	PButton b;
 	PLabel l;
 
+	//UserIcon = NewIcon(LoadImage("SYSTEM/ICONS/user.bmp"), NULL, NULL);
 
-	//UserIcon = NewIcon(LoadImage("SYSTEM/ICONS/user.bmp"),NULL,NULL);
-				
-	RectAssign(&wr,0, 0, 300, 700);
-	w = CreateWindow(&Me, wr, "Login", WF_NORMAL|WF_CENTERED);
+	RectAssign(&wr, 0, 0, 300, 700);
+	w = CreateWindow(&Me, wr, "Login", WF_NORMAL | WF_CENTERED);
 	WIDGET(w)->AppEvHdl = &AppEventHandler;
 	InsertWidget(WIDGET(DeskTop), WIDGET(w));
 
-	RectAssign(&r, 5, 5, 295, 15);
-	l = CreateLabel(&Me,r,"Username");
+	PMenu Menu = NewMenu(
+		NewMenuItemEx("File", NULL, 0, 0, NULL, &GenerateSubMenu, "File", NULL)
+	);
+	AddMenuItemEx(Menu, "Help", NULL, 0, 0, NULL, &GenerateSubMenu, "Help");
+
+	RectAssign(&r, 0, 0, 300, 20);
+	PMenuView mv = NewMenuView(&Me, r, Menu, MenuViewStyleHorizontal, 0);
+	InsertWidget(WIDGET(w), WIDGET(mv));
+
+	RectAssign(&r, 5, 25, 295, 35);
+	l = CreateLabel(&Me, r, "Username");
 	InsertWidget(WIDGET(w), WIDGET(l));
 
-	RectAssign(&r, 10, 20, 290, 345);
-	t = CreateTreeView(&Me,r,MSG_TREESEL);
+	RectAssign(&r, 10, 40, 290, 365);
+	t = CreateTreeView(&Me, r, MSG_TREESEL);
 	InsertWidget(WIDGET(w), WIDGET(t));
 
-	AddTreeItem(t->Items,"Users","/USERS/",UserIcon,&GenerateSubs);
+	AddTreeItem(t->Items, "Users", "/USERS/", UserIcon, &GenerateSubs);
 
 	GenerateSubs();
 
-	RectAssign(&r, 5, 350, 295, 360);
-	l = CreateLabel(&Me,r,"Password");
+	RectAssign(&r, 5, 370, 295, 380);
+	l = CreateLabel(&Me, r, "Password");
 	InsertWidget(WIDGET(w), WIDGET(l));
 
-	RectAssign(&r, 10, 365, 290, 375);
-	ext = CreateTextbox(&Me,r,TBF_EDITABLE);
+	RectAssign(&r, 10, 385, 290, 395);
+	ext = CreateTextbox(&Me, r, TBF_EDITABLE);
 	InsertWidget(WIDGET(w), WIDGET(ext));
 
-	RectAssign(&r, 10, 380, 290, 390);
-	sext = CreateTextbox(&Me,r,NULL);
+	RectAssign(&r, 10, 400, 290, 410);
+	sext = CreateTextbox(&Me, r, NULL);
 	InsertWidget(WIDGET(w), WIDGET(sext));
 
-	RectAssign(&r, 150, 395, 250, 415);
-	b = CreateButton(&Me,r,"Login",MSG_LOGIN);
+	RectAssign(&r, 150, 415, 250, 435);
+	b = CreateButton(&Me, r, "Login", MSG_LOGIN);
 	InsertWidget(WIDGET(w), WIDGET(b));
 
 	WidgetDrawAll(WIDGET(w));
@@ -178,7 +200,7 @@ l_int Main ( int argc, l_text *argv )
 	return true;
 }
 ////////////////////////////////////////////////////////////////////////////////
-void Close (void)
+void Close(void)
 {
 	WidgetDispose(WIDGET(w));
 }

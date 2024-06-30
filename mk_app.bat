@@ -20,13 +20,13 @@ goto end
 echo DJGPP was detected in the ROOT of C:\
 set path=c:\DJGPP\BIN;%path%;c:\djgpp\watt32\src;c:\djgpp\watt32\bin;c:\djgpp\watt32\util;c:\djgpp\watt32\lib;c:\djgpp\watt32\inc;c:\include\pdcurses\;c:\
 set DJGPP=c:\DJGPP\DJGPP.env
-set WATT_ROOT=c:\DJGPP\watt32
+set .WATT_ROOT=c:\DJGPP\watt32
 set PDCURSES_SRCDIR=c:\include\pdcurses\
 make > 
 goto end
 
 :error
-if exist c:\bin\main.exe goto end
+if exist d:\bin\main.exe goto end
 if exist c:\auragui\bin\main.exe goto end
 echo well youre fucked lol.
 pause

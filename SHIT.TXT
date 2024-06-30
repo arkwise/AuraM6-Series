@@ -1,1 +1,12 @@
 gcc -O3 -funroll-loops -Iinclude -Idjgpp/watt32/inc -Ldjgpp/watt32/lib  -c src/xapps/console.c -o obj/xapps/console.o
+
+
+Aura M6 builder august 2023 build :4000 DJGPP was detected in the ROOT of C:\ Not enough environment space left. Illegal command: make.
+Aura has been Built. C:\>mk_app
+Aura M6 builder august 2023 build :4000 DJGPP was detected in the ROOT of C:\
+gcc -03 -funroll-loops -Iinclude -Idjgpp/watt32/inc -Ldjgpp/watt32/lib -lcurses -c src/xapps/regedit.c -o obj/apps/regedit.o src/xapps/regedit.c: In function 'Main':
+src/xapps/regedit.c:288:44: error: 'GenerateSubMenu' undeclared (first use in th
+is function)
+src/xapps/regedit.c:288:44: note: each undeclared identifier is reported only on ce for each function it appears in
+make: *** [common.mak: 458: obj/xapps/regedit.o] Error 1
+Aura has been Built.

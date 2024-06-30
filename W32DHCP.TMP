@@ -1,0 +1,21 @@
+#
+# GENERATED FILE. DO NOT EDIT!
+#
+# DHCP transient configuration; values that must
+# be known between consecutive runs of applications.
+# Version: Watt-32 (2.2.11), GNU-C 4.7.4 (Pent), djgpp 2.05, Jan 11 2023
+#
+# This file saved at Jun 29 19:06:11 2024
+#
+DHCP.LEASE    = 1721708610           # lease expires  Jun 30 19:06:11 2024
+DHCP.RENEW    = 1721622215           # renew expires  Jun 29 19:06:16 2024
+DHCP.REBIND   = 1721622218           # rebind expires Jun 29 19:06:19 2024
+DHCP.MY_IP    = 10.0.2.15            # assigned ip-address
+DHCP.NETMASK  = 255.255.255.0        # assigned netmask
+DHCP.GATEWAY  = 10.0.2.2             # assigned gateway
+DHCP.NAMESERV = 10.0.2.3             # assigned nameserver
+DHCP.SERVER   = 10.0.2.2             # DHCP server
+DHCP.HOSTNAME = DOSBox-X             # assigned hostname
+DHCP.DOMAIN   = your.domain.com      # assigned domain
+DHCP.DEF_TTL  = 254                  # default TTL
+DHCP.TCP_KEEP = 30                   # TCP keepalive interval

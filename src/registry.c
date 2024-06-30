@@ -129,10 +129,10 @@ void WriteKey ( PFile f, PRegKey o ) {
 ////////////////////////////////////////////////////////////////////////////////
 void SaveRegistry ( void ) {
 	TRegHead Head;
-	PFile f = FileOpen("system/xettings.dat", "wb");
+	PFile f = FileOpen("system/settings.dat", "wb");
 	if ( !f )
    {
-   DebugMessage("Cannot open xsystem.dat!");
+   DebugMessage("Cannot open system/settings.dat!");
    return;
    }
 	Head.Magic = NREGISTRY_MAGIC;
@@ -580,14 +580,17 @@ void NRegistryInit ( void ) {
 
 		KeySetText("/USER/DESKTOP/color", "3D61AD");
 		KeySetInt ("/USER/DESKTOP/alignment", 0);
-		KeySetText("/USER/DESKTOP/wallpaper", "./DESKTOP/start.bmp");
-		KeySetText("/USER/DESKTOP/theme", "./DESKTOP/plex.ini");
+		KeySetText("/USER/DESKTOP/wallpaper", "DESKTOP/start.bmp");
+		KeySetText("/USER/DESKTOP/theme", "DESKTOP/plex.ini");
 
 		CreateKey("/USER/GUI");
 		KeySetText("/USER/GUI/SKIN", "(none)");
 		KeySetText("/USER/GUI/SKINS/CLASSIX", "classix.ini");
 		KeySetText("/USER/GUI/SKINS/NONE", "");
-		KeySetText("/USER/GUI/SKINPATH", "./SYSTEM/SKINS/");
+		KeySetText("/USER/GUI/SKINPATH", "SYSTEM/SKINS/");
+
+		CreateKey("/USER/DESKTOP/THEME");
+    KeySetText("/USER/DESKTOP/THEME", "desktop/aura.ini");
 
 
 		KeySetText("/USER/COLOR/OSD", "888888");

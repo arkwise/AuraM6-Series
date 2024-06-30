@@ -1,0 +1,47 @@
+
+ARP-cache:
+      <Empty>
+
+Gateways:
+     DEST/MASK        DEV   GATEWAY         (MASK)
+     0.0.0.0/32       eth0  192.168.1.1     (0.0.0.0)
+
+Routes:
+   # GATEWAY         HOST            MASK            FLAGS
+
+Cache stats:
+      ARP-cache:   hits 0, misses 0
+      Route-cache: hits 0, misses 0
+
+Driver statistics:
+      Rx:         0 pkt,          0 bytes,      0 errors,      0 lost  (this session)
+      Tx:         0 pkt,          0 bytes,      0 errors
+      Rx:         0 pkt,          0 bytes,      0 errors,      0 lost  (since boot)
+      Tx:         0 pkt,          0 bytes,      0 errors
+
+MAC   input stats:
+      dropped 0, waiting 0, looped 0, non-IP recv 0 sent 0
+      unknown types, 0, LLC frames 0, IP-recursions 0 
+      wrong handle 0, bad-sync 0, too large 0, too small 0 
+MAC   output stats:
+      Tx errors              0 
+      Tx retries             0
+      Tx timeout             0
+ARP   Requests:              0 recv
+      Requests:              0 sent
+      Replies:               0 recv
+      Replies:               0 sent
+IP4   input stats:
+IP4   output stats:
+IP6   input stats:
+IP6   output stats:
+ICMP  input stats:
+ICMP  output stats:
+ICMP6 input stats:
+ICMP6 output stats:
+IGMP  input stats:
+IGMP  output stats:
+UDP   input stats:
+UDP   output stats:
+TCP   input stats:
+TCP   output stats:

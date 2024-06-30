@@ -506,7 +506,7 @@ l_bool LibMain ( int argc, l_text *argv )
 	SYSEXPORT(FileRun);
 
 	BinaryExtender = AddDataTypeEx(DTYPE_BINDATA,"Unknown binary",ListKey(Me.Ressource,"FILE16"),ListKey(Me.Ressource,"FILE32"),ListKey(Me.Ressource,"FILE48"),NULL,0);
-	AddDTAction(BinaryExtender,"Open with...","Applications/openwth.app",NULL,0);
+	AddDTAction(BinaryExtender,"Open with...","xapps/openwth.app",NULL,0);
 	
 	
 	t = AddDataTypeEx(DTYPE_DYNLD,"DynLd executable",ListKey(Me.Ressource,"APP16"),ListKey(Me.Ressource,"APP32"),ListKey(Me.Ressource,"APP48"),&GetDynLdIcon,0);

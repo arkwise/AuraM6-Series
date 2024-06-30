@@ -1,266 +1,179 @@
-/**
- * TODO:
- *		+ timer for score
- */
+////////////////////////////////////////////////////////////////////////////////
+//
+//  Tic Tac Toe Game
+//
+//  (c) Copyright 2012 Finn Technologies and Chase Finn. All rights reserved.
+//
+////////////////////////////////////////////////////////////////////////////////
 #include "kernel.h"
-#include "canvas.h"
+#include "widget.h"
+#include "menu.h"
 #include "button.h"
 #include "window.h"
-#include "timer.h"
-#include "menu.h"
 #include "label.h"
+#include "tbox.h"
 
-l_uid 	nUID 		= "o3ttt";
-l_ulong AppVersion	= ULONG_ID(0,0,1,0);
-char AppName[]		= "03 TicTacToe";
-l_uid NeededLibs[]	= { "widget","window","menu","canvas","" };
+l_ulong AppVersion = ULONG_ID(0, 0, 0, 1);
+char AppName[] = "Tic Tac Toe";
+l_uid nUID = "app:tictactoe";
+l_uid NeededLibs[] = { "button", "window", "menu", "label", "" };
 
-#define SIZE 48
+#define MSG_NEWGAME 0x00010001
+#define MSG_ABOUT 0x00010002
+#define MSG_EXIT 0x00010003
+#define MSG_MOVE 0x00010004
 
-#define MSG_NEWGAME 0xdeadbeef
 PWindow w = 0;
-PCanvas Surface = 0;
-l_uchar GameSource[3][3] = {{0,0,0},{0,0,0},{0,0,0}};
+PLabel lbl = 0;
+PButton board[3][3];
+char currentPlayer = 'X';
 
-l_uchar BestPlaces[] = {4, 0, 2, 6, 8, 1, 3, 5, 7};
+void GenerateSubMenu(PMenuItem itm, void* Args) {
+    l_text arg = (l_text)Args;
 
-l_bool End = 0;
+    if (TextCompare(arg, "File") == 0) {
+        PMenuItem items = NewMenuItem("New Game", NULL, MSG_NEWGAME, 0, NULL, NULL);
+        AddMenuItem(items->SubMenu, "Exit", NULL, MSG_EXIT, 0, NULL);
+        itm->SubMenu = items->SubMenu;
+    } else if (TextCompare(arg, "Help") == 0) {
+        PMenuItem items = NewMenuItem("About", NULL, MSG_ABOUT, 0, NULL, NULL);
+        itm->SubMenu = items->SubMenu;
+    }
+}
 
-void SurfaceDraw ( PWidget o, p_bitmap buffer, PRect w )
+void ResetBoard() {
+    int i, j;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            ButtonSetText(board[i][j], "");
+        }
+    }
+    currentPlayer = 'X';
+    LabelSetText(lbl, "Player X's turn");
+}
+
+l_bool CheckWin() {
+    int i;
+    const char *text1, *text2, *text3;
+    for (i = 0; i < 3; i++) {
+        text1 = ButtonText(board[i][0]);
+        text2 = ButtonText(board[i][1]);
+        text3 = ButtonText(board[i][2]);
+        if (text1 != NULL && text1[0] != '\0' && text1[0] == text2[0] && text2[0] == text3[0]) {
+            return true;
+        }
+        text1 = ButtonText(board[0][i]);
+        text2 = ButtonText(board[1][i]);
+        text3 = ButtonText(board[2][i]);
+        if (text1 != NULL && text1[0] != '\0' && text1[0] == text2[0] && text2[0] == text3[0]) {
+            return true;
+        }
+    }
+    text1 = ButtonText(board[0][0]);
+    text2 = ButtonText(board[1][1]);
+    text3 = ButtonText(board[2][2]);
+    if (text1 != NULL && text1[0] != '\0' && text1[0] == text2[0] && text2[0] == text3[0]) {
+        return true;
+    }
+    text1 = ButtonText(board[0][2]);
+    text2 = ButtonText(board[1][1]);
+    text3 = ButtonText(board[2][0]);
+    if (text1 != NULL && text1[0] != '\0' && text1[0] == text2[0] && text2[0] == text3[0]) {
+        return true;
+    }
+    return false;
+}
+
+l_bool BoardFull() {
+    int i, j;
+    const char *text;
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            text = ButtonText(board[i][j]);
+            if (text == NULL || text[0] == '\0') {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+l_bool AppEventHandler(PWidget o, PEvent Ev)
 {
-	l_int x = 0, xp;
-	l_int y = 0, yp, n;
+    char msg[50];
+    const char *buttonText;
+    switch (Ev->Message)
+    {
+    case MSG_NEWGAME:
+        ResetBoard();
+        return true;
+    case MSG_ABOUT:
+        MessageBox(&Me, "About Tic Tac Toe", "Tic Tac Toe Game\n\n(c) 2012 Finn Technologies and Chase Finn. All rights reserved.", MBB_OK);
+        return true;
+    case MSG_EXIT:
+        CloseApp(&Me);
+        return true;
+    case MSG_MOVE:
+        buttonText = ButtonText((PButton)o);
+        if (buttonText == NULL || buttonText[0] == '\0') {
+            ButtonSetText((PButton)o, "%c", currentPlayer);
+            if (CheckWin()) {
+                sprintf(msg, "Player %c wins!", currentPlayer);
+                MessageBox(&Me, "Game Over", msg, MBB_OK);
+                ResetBoard();
+            } else if (BoardFull()) {
+                MessageBox(&Me, "Game Over", "It's a draw!", MBB_OK);
+                ResetBoard();
+            } else {
+                currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+                sprintf(msg, "Player %c's turn", currentPlayer);
+                LabelSetText(lbl, msg);
+            }
+        }
+        return true;
+    }
 
-	rectfill(buffer, o->Absolute.a.x, o->Absolute.a.y, o->Absolute.b.x, o->Absolute.b.y, COL_3DFACE);
-	
-	xp =o->Absolute.a.x;
-	for ( x = 0; x < 2; x++ ) {
-		xp += SIZE;
-		vline(buffer,xp,o->Absolute.a.y,o->Absolute.b.y,COL_3DDARK);
-	}
-	
-	yp = o->Absolute.a.y;
-	for ( y = 0; y < 2; y++ ) {
-		yp += SIZE;
-		hline(buffer,o->Absolute.a.x,yp,o->Absolute.b.x,COL_3DDARK);
-	}
-
-	xp =o->Absolute.a.x;
-	for ( x = 0; x < 3; x++ ) {
-		yp = o->Absolute.a.y;
-		for ( y = 0; y < 3; y++ ) {
-			if ( GameSource[x][y] == 1 ) {
-				line(buffer,xp+2,yp+2,xp+SIZE-2,yp+SIZE-2,makecol(0,255,0));
-				line(buffer,xp+2,yp+3,xp+SIZE-2,yp+SIZE-1,makecol(0,255,0));
-				
-				
-				line(buffer,xp+SIZE-2,yp+2,xp+2,yp+SIZE-2,makecol(0,255,0));
-				line(buffer,xp+SIZE-2,yp+3,xp+2,yp+SIZE-1,makecol(0,255,0));
-				
-			} else if ( GameSource[x][y] == 2 ) {
-				circle(buffer,xp+(SIZE/2),yp+(SIZE/2),(SIZE/2)-2,makecol(255,0,0));
-				circle(buffer,xp+(SIZE/2),yp+(SIZE/2),(SIZE/2)-3,makecol(255,0,0));
-			}
-			yp += SIZE;
-		}
-		xp += SIZE;
-	}
+    return false;
 }
 
-int Winner ( void ) {
-	
-	int x, y;
-	
-	for ( x = 0; x < 3; x++ )
-		if ( (GameSource[x][0] == GameSource[x][1]) && (GameSource[x][1] == GameSource[x][2]) ) return GameSource[x][0];
-		
-	for ( y = 0; y < 3; y++ )
-		if ( (GameSource[0][y] == GameSource[1][y]) && (GameSource[1][y] == GameSource[2][y]) ) return GameSource[0][y];
-
-	if ( (GameSource[0][0] == GameSource[1][1]) && ( GameSource[1][1] == GameSource[2][2]) ) return GameSource[1][1];
-	if ( (GameSource[0][2] == GameSource[1][1]) && ( GameSource[1][1] == GameSource[2][0]) ) return GameSource[1][1];
-	
-	return 0;	
-}
-
-
-l_bool IACompleteLines ( l_int p ) {
-	
-	int x, y, x1, x2, y1, y2;
-	
-	for ( x = 0; x < 3; x++ ) {
-		x1 = x ? 0 : 1;
-		x2 = x < 2 ? 2 : 1;
-		for ( y = 0; y < 3; y++ ) {
-			y1 = y ? 0 : 1;
-			y2 = y < 2 ? 2 : 1;
-			if ( !GameSource[x][y] ) {
-				
-				if ( ( GameSource[x1][y] == GameSource[x2][y] && (GameSource[x1][y] == p) )
-					|| ( GameSource[x][y1] == GameSource[x][y2] && (GameSource[x][y1] == p) ) ) {
-					GameSource[x][y] = 2;
-					return true;
-				}
-			}
-		}
-	}
-	
-	for ( x = 0; x < 3; x++ ) {
-		x1 = x ? 0 : 1;
-		x2 = x < 2 ? 2 : 1;
-		if ( !GameSource[x][x] ) {
-			if ( GameSource[x1][x1] == GameSource[x2][x2] && (GameSource[x1][x1] == p) ) {
-				GameSource[x][x] = 2;
-				return true;
-			}
-		}
-	}
-	
-	for ( x = 0; x < 3; x++ ) {
-		x1 = x ? 0 : 1;
-		x2 = x < 2 ? 2 : 1;
-		if ( !GameSource[x][2-x] ) {
-			if ( GameSource[x1][2-x1] == GameSource[x2][2-x2] && (GameSource[x1][2-x1] == p) ) {
-				GameSource[x][2-x] = 2;
-				return true;
-			}
-		}
-	}
-	return false;
-}
-
-void ComputerTurn ( void ) {
-	int i,x,y;
-	if ( IACompleteLines(2) ) return; // First : Try to win
-	if ( IACompleteLines(1) ) return; // Second : Prevent player to win
-		
-	for ( i = 0; i < 9; i++ ) {
-		x = BestPlaces[i]%3;
-		y = BestPlaces[i]/3;
-		if ( !GameSource[x][y] ) {
-			GameSource[x][y] = 2;
-			return;
-		}
-	}
-	
-}
-
-l_bool SurfaceEH ( PWidget o, PEvent Event )
+l_int Main(int argc, l_text* argv)
 {
-	if ( Event->Type == EV_MOUSE)
-	{
-		if ( Event->Message == WEvMouseLDown && !End )
-		{
-			l_int x,y;
-			x = (Mouse->State.p.x-o->Absolute.a.x)/SIZE;
-			y = (Mouse->State.p.y-o->Absolute.a.y)/SIZE;
-			
-			if ( !GameSource[x][y] ) GameSource[x][y] = 1;
-			
-			if ( Winner() ) {
-				End = true;
-				WidgetDraw(o,NULL);
-				MessageBox(&Me, "O3 TicTacToe", "Well done !", MBB_OK);
-			} else {
-				ComputerTurn();
-				if ( Winner() ) {
-					End = true;
-					WidgetDraw(o,NULL);
-					MessageBox(&Me, "O3 TicTacToe", "Game Over : You lose", MBB_OK);
-				} else
-					WidgetDraw(o,NULL);
-			}
-			
-			return true;
-			
-		}
+    PLabel l;
+    TRect r;
+    int i, j;
 
-	}
-	return false;
+    RectAssign(&r, 0, 0, 400, 400);
+    w = CreateWindow(&Me, r, "Tic Tac Toe", WF_NORMAL | WF_CENTERED);
+    InsertWidget(WIDGET(DeskTop), WIDGET(w));
+
+    PMenuItem fileMenu = NewMenuItemEx("File", NULL, 0, 0, NULL, &GenerateSubMenu, "File", NULL);
+    PMenu Menu = NewMenu(fileMenu);
+    AddMenuItemEx(Menu, "Help", NULL, 0, 0, NULL, &GenerateSubMenu, "Help");
+
+    RectAssign(&r, 0, 0, 400, 20);
+    PMenuView o = NewMenuView(&Me, r, Menu, MenuViewStyleHorizontal, 0);
+    InsertWidget(WIDGET(w), WIDGET(o));
+
+    RectAssign(&r, 10, 30, 380, 50);
+    lbl = CreateLabel(&Me, r, "Player X's turn");
+    WIDGET(lbl)->BackgroundColor = COL_3DFACE;
+    InsertWidget(WIDGET(w), WIDGET(lbl));
+
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            RectAssign(&r, 10 + j * 60, 60 + i * 60, 70 + j * 60, 120 + i * 60);
+            board[i][j] = CreateButton(&Me, r, "", MSG_MOVE);
+            InsertWidget(WIDGET(w), WIDGET(board[i][j]));
+        }
+    }
+
+    WIDGET(w)->AppEvHdl = &AppEventHandler;
+
+    WidgetDrawAll(WIDGET(w));
+    return true;
 }
 
-
-l_bool AppEventHandler ( PWidget o, PEvent Event )
+void Close(void)
 {
-	if ( Event->Type == EV_MESSAGE )
-	{
-		switch ( Event->Message )
-		{
-			case WM_CLOSE:
-			{
-				CloseApp(&Me);
-				return true;
-			}
-			break;
-
-			case WM_ABOUT:
-			{
-				MessageBox(&Me, "About O3 TicTacToe", "O3 TicTacToe 0.1\nYet another cloned game for oZone GUI\n\nCopyright (c) 2004 Point Mad, Lukas Lipka. All rights reserved.", MBB_OK);
-				return true;
-			}
-			break;
-
-			case MSG_NEWGAME:
-			{
-				memset(&GameSource,0,sizeof(GameSource));
-				
-				End = false;
-				WidgetDraw(WIDGET(Surface), NULL);
-
-
-				return true;
-			}
-			break;
-		}
-	}
-
-	return false;
-}
-
-l_int Main ( int argc, l_text *argv )
-{
-	TRect r;
-	
-	
-	RectAssign(&r,0, 0, 3*SIZE, 3*SIZE+25);
-	w = CreateWindow(&Me, r, "TicTacToe", WF_CAPTION|WF_FRAME|WF_CENTERED|WF_MINIMIZE);
-	InsertWidget(WIDGET(DeskTop), WIDGET(w));
-
-
-	PMenu Menu = NewMenu(
-     NewMenuItem( "Game", NULL, NULL, NULL,
-     		 NewMenu (
-     		 		NewMenuItem( "New game", NULL, MSG_NEWGAME, NULL, NULL,
-     		 		NewMenuItemSeparator(
-     		 		NewMenuItem( "Exit", NULL, WM_CLOSE, NULL, NULL,
-     		 		NULL)))
-     		 ),
-     NewMenuItem( "Help", NULL, NULL, NULL,
-     	NewMenu(
-     		NewMenuItem( "About", NULL, WM_ABOUT, NULL, NULL, NULL)),
-     NULL))
-	);
-
-	RectAssign(&r,0,0,3*SIZE,20);
-
-	PMenuView o = NewMenuView(&Me,r,Menu,MenuViewStyleHorizontal,0);
-	InsertWidget(WIDGET(w), WIDGET(o));
-	
-	WidgetSize(&r, 0, 25, 3*SIZE, 3*SIZE);
-	Surface = CreateCanvas(&Me, r);
-	WIDGET(Surface)->Draw = &SurfaceDraw;
-	WIDGET(Surface)->EventHandler = &SurfaceEH;
-	WIDGET(Surface)->Flags |= WFForceBuffer;
-	InsertWidget(WIDGET(w), WIDGET(Surface));
-
-	WidgetDrawAll(WIDGET(w));
-
-	WIDGET(w)->AppEvHdl = &AppEventHandler;
-
-	return true;
-}
-
-void Close (void)
-{
-	WidgetDispose(WIDGET(w));
+    DebugMessage("Running Close function");
 }

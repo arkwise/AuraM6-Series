@@ -331,7 +331,7 @@ l_int Main(int argc, l_text *argv)
      *      Get desktop theme
      */
 
-        ThemeLoad(KeyGetText("/user/desktop/theme", "/system/theme/aura.ini"));
+        ThemeLoad(KeyGetText("/user/desktop/theme", "/desktop/aura.ini"));
 
         /**
      *      Initialize panels

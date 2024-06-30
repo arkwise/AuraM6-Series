@@ -37,25 +37,7 @@ l_text ResolveFileName ( l_text File ) {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-void CommandDf() {
-    struct dfree diskfree;
-    int drive = getdisk() + 1; // get the current drive number (1=A, 2=B, etc.)
 
-    if (_dos_getdiskfree(drive, &diskfree) == 0) {
-        long total_clusters = diskfree.df_total;
-        long free_clusters = diskfree.df_avail;
-        long sectors_per_cluster = diskfree.df_sclus;
-        long bytes_per_sector = diskfree.df_bsec;
-        long total_bytes = total_clusters * sectors_per_cluster * bytes_per_sector;
-        long free_bytes = free_clusters * sectors_per_cluster * bytes_per_sector;
-
-        Printf(&Me, "Filesystem information for drive %c:\n", 'A' + drive - 1);
-        Printf(&Me, "Total space: %ld bytes (%.2f MB)\n", total_bytes, total_bytes / (1024.0 * 1024.0));
-        Printf(&Me, "Free space: %ld bytes (%.2f MB)\n", free_bytes, free_bytes / (1024.0 * 1024.0));
-    } else {
-        Printf(&Me, "Error: Unable to retrieve disk information for drive %c\n", 'A' + drive - 1);
-    }
-}
 
 l_int Main( int arc, l_text *arv ) {
     l_text a;

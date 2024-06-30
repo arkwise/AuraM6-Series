@@ -7,17 +7,22 @@
 #include "slider.h"
 #include "listview.h"
 #include "menu.h"
-#include "label.h"
 #include "iodlg.h"
 
-l_ulong AppVersion	= ULONG_ID(0,0,0,1);
-char    AppName[]	= "Sound Stream Player";
-l_uid	nUID		= "ap:ssplay";
-l_uid NeededLibs[]	= { "widget", "mp3","sound","" };
+/*
+001 fixed menu generation errors
+
+
+*/
+
+l_ulong AppVersion = ULONG_ID(0,0,0,1);
+char AppName[] = "Sound Stream Player";
+l_uid nUID = "ap:ssplay";
+l_uid NeededLibs[] = { "widget", "mp3","sound","" };
 
 typedef struct TPlaylistItem *PPlaylistItem;
 typedef struct TPlaylistItem {
-	struct	TListviewItem o;
+	struct TListviewItem o;
 	l_text File;
 	l_int  Sec;
 } TPlaylistItem;
@@ -41,32 +46,31 @@ PLabel l;
 
 void SStreamLoad ( l_text file, l_text name );
 
-#define  MSG_FILENEW	0xF0030001
-#define  MSG_FILEOPEN	0xF0030002
+#define MSG_FILENEW    0xF0030001
+#define MSG_FILEOPEN   0xF0030002
 
-#define  MSG_LISTOPEN	0xF0030003
-#define  MSG_LISTSAVE	0xF0030004
-#define  MSG_LISTSAVEAS	0xF0030005
+#define MSG_LISTOPEN   0xF0030003
+#define MSG_LISTSAVE   0xF0030004
+#define MSG_LISTSAVEAS 0xF0030005
 
-#define  MSG_PLAY	0xF0030006
-#define  MSG_STOP	0xF0030007
-#define  MSG_PLAYVAL	0xF0030008
-#define  MSG_NEXT	0xF0030009
-#define  MSG_PREV	0xF0030010
-#define  MSG_ADD	0xF0030011
-#define  MSG_REMOVE	0xF0030012
+#define MSG_PLAY       0xF0030006
+#define MSG_STOP       0xF0030007
+#define MSG_PLAYVAL    0xF0030008
+#define MSG_NEXT       0xF0030009
+#define MSG_PREV       0xF0030010
+#define MSG_ADD        0xF0030011
+#define MSG_REMOVE     0xF0030012
 
-#define  MSG_ADDFILE	0xF0030013
-#define  MSG_ADDCUR	0xF0030014
+#define MSG_ADDFILE    0xF0030013
+#define MSG_ADDCUR     0xF0030014
 PButton btpp;
 
 PImage IconPause, IconPlay, IconStop, IconNext, IconPrev, IconPlus, IconMinus;
 
 l_int oldpos = 0;
 
-
-
 #define PLITEM(o) ((PPlaylistItem)(o))
+
 ////////////////////////////////////////////////////////////////////////////////
 void PlaylistItemFree(PPlaylistItem o) {
 	free(o->File);
@@ -408,9 +412,9 @@ l_bool AppEventHandler ( PWidget o, PEvent Ev )
 		if ( Ev->Message == MSG_ADD )
 		{
 			PMenu m = NewMenu(
-				NewMenuItem( "Current", NULL, MSG_ADDCUR, UsePlayList || !s || !CurrentFile?MI_DISABLE:0, NULL,
-			 	NewMenuItem( "File",	NULL, MSG_ADDFILE, 0, NULL,
-			 	NULL)));
+				NewMenuItemEx("Current", NULL, MSG_ADDCUR, UsePlayList || !s || !CurrentFile ? MI_DISABLE : 0, NULL, NULL, NULL,
+				NewMenuItemEx("File", NULL, MSG_ADDFILE, 0, NULL, NULL, NULL, NULL))
+			);
 			l_ulong Msg = PopUpMenuWait ( &Me, Mouse->State.p, m, 0);
 			FreeMenu(m);
 			
@@ -434,7 +438,32 @@ l_bool AppEventHandler ( PWidget o, PEvent Ev )
 	}
 	return false;
 }
-////////////////////////////////////////////////////////////////////////////////
+
+void GenerateSubMenu(PMenuItem itm, void* Args)
+{
+	l_text arg = (l_text)Args;
+
+	if (TextCompare(arg, "File") == 0)
+	{
+		itm->SubMenu = NewMenu(
+			NewMenuItem("New", NULL, MSG_FILENEW, 0, NULL, NULL)
+		);
+		AddMenuItem(itm->SubMenu, "Open", NULL, MSG_FILEOPEN, 0, NULL);
+		AddMenuItemSeparator(itm->SubMenu);
+		AddMenuItem(itm->SubMenu, "Open playlist", NULL, MSG_LISTOPEN, 0, NULL);
+		AddMenuItem(itm->SubMenu, "Save playlist", NULL, MSG_LISTSAVE, 0, NULL);
+		AddMenuItem(itm->SubMenu, "Save playlist as...", NULL, MSG_LISTSAVEAS, 0, NULL);
+		AddMenuItemSeparator(itm->SubMenu);
+		AddMenuItem(itm->SubMenu, "Exit", NULL, WM_CLOSE, 0, NULL);
+	}
+	else if (TextCompare(arg, "Help") == 0)
+	{
+		itm->SubMenu = NewMenu(
+			NewMenuItem("About", NULL, WM_ABOUT, 0, NULL, NULL)
+		);
+	}
+}
+
 l_int Main ( int argc, l_text *argv )
 {
 	TRect r;
@@ -461,26 +490,12 @@ l_int Main ( int argc, l_text *argv )
 						NULL ));
 	
 	PMenu Menu = NewMenu(
-     NewMenuItem( "File", NULL, NULL, NULL,
-     		 NewMenu (
-     		 		NewMenuItem( "New",  NULL, MSG_FILENEW, NULL, NULL,
-     		 		NewMenuItem( "Open", NULL, MSG_FILEOPEN, NULL, NULL,
-     		 		NewMenuItemSeparator(
-     		 		NewMenuItem( "Open playlist", NULL, MSG_LISTOPEN, NULL, NULL,
-     		 		NewMenuItem( "Save playlist", NULL, MSG_LISTSAVE, NULL, NULL,
-     		 		NewMenuItem( "Save playlist as...", NULL, MSG_LISTSAVEAS, NULL, NULL,
-     		 		NewMenuItemSeparator(
-     		 		NewMenuItem( "Exit", NULL, WM_CLOSE, NULL, NULL, NULL))))))))
-     		 ),
-     NewMenuItem( "View", NULL, NULL, NULL, NULL,
-     NewMenuItem( "Help", NULL, NULL, NULL,
-     	NewMenu(
-     		NewMenuItem( "About", NULL, WM_ABOUT, NULL, NULL, NULL)),
-     NULL)))
+		NewMenuItemEx("File", NULL, 0, 0, NULL, &GenerateSubMenu, "File", NULL)
 	);
+	AddMenuItemEx(Menu, "Help", NULL, 0, 0, NULL, &GenerateSubMenu, "Help");
 
 	RectAssign(&r,0,0,540,20);
-	PMenuView o = NewMenuView(&Me,r,Menu,MenuViewStyleHorizontal,0);
+	PMenuView o = CreateMenuView(&Me,r,Menu,MenuViewStyleHorizontal,0);
 	InsertWidget(WIDGET(w), WIDGET(o));
 
 	RectAssign(&r,0, 22, 300, 37);
@@ -506,7 +521,7 @@ l_int Main ( int argc, l_text *argv )
 
 	RectAssign(&r,0, 80, 275, 230);
 	PlayList = CreateListview(&Me,r,"Title",LVS_LIST,LVF_ORDER|LVF_COLUMS|LVF_COLRESIZE);
-	ListviewAddColum ( PlayList, "Lenght",NULL, 75, 0 );
+	ListviewAddColum ( PlayList, "Length",NULL, 75, 0 );
 	PlayList->OnValMsg = MSG_PLAYVAL;
 	InsertWidget(WIDGET(w), WIDGET(PlayList));
 	
@@ -530,10 +545,8 @@ l_int Main ( int argc, l_text *argv )
 	b->Icon = IconMinus;
 	InsertWidget(WIDGET(w), WIDGET(b));
 	
-	
 	WidgetDrawAll(WIDGET(w));
 	t = NewTimer(&Me,100, &TimerPoll,NULL);
-	
 	
 	return true;
 }

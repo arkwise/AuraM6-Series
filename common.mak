@@ -463,6 +463,9 @@ $(OBJ_DIR)/illkirch/%.o: src/illkirch/%.c
 $(OBJ_DIR)/desktop/%.o: src/xapps/desktop/%.c
 	gcc $(CFLAGS) -c $< -o $@
 
+$(OBJ_DIR)/ozone/%.o: src/xapps/ozd/%.c
+	gcc $(CFLAGS) -c $< -o $@	
+
 $(OBJ_DIR)/xlib/%.o: src/dms/%.c
 	gcc $(CFLAGS) -c $< -o $@
 

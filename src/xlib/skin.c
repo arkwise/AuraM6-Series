@@ -15,7 +15,7 @@ l_ulong AppVersion      = ULONG_ID(1,5,2,0);
 char    AppName[]       = "Skin System";
 l_uid   nUID            = "skin";
 
-l_text SKIN_DIR  = "./SYSTEM/SKINS/";
+l_text SKIN_DIR  = "SYSTEM/SKINS/CLASSIX";
 
 
 /**
@@ -346,7 +346,7 @@ void SkinSystemInstall (void)
         _SysColors[12] = makecol(192,192,255);
         _SysColors[13] = makecol(  0,  0,  0);
 
-SKIN_DIR = KeyGetText("/USER/GUI/SKINPATH", "./SYSTEM/SKINS/");
+SKIN_DIR = KeyGetText("/USER/GUI/SKINPATH", "SYSTEM/SKINS/CLASSIX");
 
 if (strlen(KeyGetText("/USER/GUI/SKIN", "")) == 0)
    {
