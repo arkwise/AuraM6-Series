@@ -89,7 +89,7 @@ void CollectingData( void )
 {
 
 	RectAssign(&r,0, 0, 400, 255);
-	w = CreateWindow( &Me, r, "Aura Setup", WF_FRAME|WF_CAPTION|WF_MINIMIZE|WF_CENTERED );
+	w = CreateWindow( &Me, r, "Aura Setup cunt", WF_FRAME|WF_CAPTION|WF_MINIMIZE|WF_CENTERED );
 	InsertWidget(DeskTop, WIDGET(w));
 	WIDGET(w)->AppEvHdl = &SysAppEventHandler;
 

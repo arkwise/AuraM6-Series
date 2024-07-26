@@ -7,6 +7,8 @@
 
 // Global variables
 PMenu MINMenu = 0;
+PMenu TaskbarMenu = 0;
+
 #define MSG_TREEVIEW_ONSEL 0x1256
 #define MSG_DBLCLK 0x2266
 #define MSG_TB_GOUP 0x4266
@@ -29,6 +31,7 @@ _PUBLIC PWidget GSSYSMENU = 0;
 _PUBLIC PWidget GSTaskbar = 0;
 _PUBLIC PWidget GSTraybar = 0;
 _PUBLIC PLabel GSClock = 0;
+_PUBLIC PButton b = 0; // Add the button for the clock as in the old version
 
 _PUBLIC PList TraybarIconList = 0;
 _PUBLIC PList WindowList = 0;
@@ -70,6 +73,17 @@ l_bool TaskbarRedraw(PWindow w)
 {
     WidgetDraw(GSTaskbar, NULL);
     return true;
+}
+
+void ClockDraw(PWidget o, p_bitmap buffer, PRect w)
+{
+    rectfill(buffer, o->Absolute.a.x, o->Absolute.a.y, o->Absolute.b.x, o->Absolute.b.y, COL_3DFACE);
+    if (THMPanelFace && UseSkins)
+        DrawTransTHEMESkin(buffer, THMPanelFace->Skin, o->Absolute.a.x, o->Absolute.a.y, o->Absolute.b.x, o->Absolute.b.y, windowlst, 255);
+    else
+        Rect3D(buffer, o->Absolute.a.x, o->Absolute.a.y, o->Absolute.b.x, o->Absolute.b.y, COL_3DLIGHT, COL_3DDARK);
+
+    textout_centre_ex(buffer, default_font, BUTTON(o)->Caption, (o->Absolute.a.x + o->Absolute.b.x) / 2 + 1, (o->Absolute.a.y + o->Absolute.b.y - text_height(default_font)) / 2 + 1, makecol(0, 0, 0), -1);
 }
 
 void TaskbarDraw(PWidget o, p_bitmap buffer, PRect w)
@@ -377,21 +391,27 @@ void RefreshPanelClock(void *A)
         tme->tm_hour -= 12;
         strcpy(ampm, "PM");
     }
-    if (tme->tm_hour == 12)
+    else if (tme->tm_hour == 12)
     {
         strcpy(ampm, "PM");
     }
-    if (tme->tm_hour == 0)
+    else if (tme->tm_hour == 0)
     {
         tme->tm_hour += 12;
     }
 
-    DebugMessage("pretime");
+    DebugMessage("Refreshing clock...");
 
     if (tme)
-        LabelSetText(GSClock, "%d:%02d %s", tme->tm_hour, tme->tm_min, ampm);
-
-    DebugMessage("posttime");
+    {
+        ButtonSetCaptionEx(b, "%d:%02d %s", tme->tm_hour, tme->tm_min, ampm);
+        DebugMessage("Clock refreshed to %d:%02d %s", tme->tm_hour, tme->tm_min, ampm);
+    }
+    else
+    {
+        DebugError("Time not found, Using 12:00 AM");
+        ButtonSetCaptionEx(b, "12:00 AM");
+    }
 }
 
 void TraybarDraw(PWidget o, p_bitmap buffer, PRect w)
@@ -579,13 +599,15 @@ _PUBLIC void GSPanelInit()
     WidgetSetTooltipText(WIDGET(GSEXIT), "Exit");
     InsertWidget(GSPanel, WIDGET(GSEXIT));
 
-    // Adjusted the height for the clock border
-    RectAssign(&r, GSScreenWidth - 46, (Height - BHeight) / 2 + 7, GSScreenWidth, (Height + BHeight) / 2 - 6);
-    GSClock = CreateLabel(&Me, r, "12:00");
-    WIDGET(GSClock)->Draw = &GSClockDraw; // Set the custom draw function for GSClock
-    LABEL(GSClock)->FontColor = COL_3DTEXT;
-    InsertWidget(GSTaskbar, WIDGET(GSClock));
+    // Add old clock widget implementation
+    RectAssign(&r, GSScreenWidth - 55, 0, GSScreenWidth - 6, 30);
+    b = CreateButton(&Me, r, "12:00 PM", IDM_QUIT);
+    WIDGET(b)->Draw = &ClockDraw;
+    WidgetSetTooltipText(WIDGET(GSCP), "Whats the time?");
+    InsertWidget(GSTaskbar, WIDGET(b));
+
     RefreshPanelClock(NULL);
+
     RectAssign(&WINDOW_MaximizeArea, 0, 31, GSScreenWidth, GSScreenHeight - 33);
 
     WidgetDrawAll(DeskTop);

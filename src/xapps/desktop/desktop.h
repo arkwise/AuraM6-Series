@@ -96,6 +96,8 @@ extern l_color PanelColor;
 #define DM_PROPERTIES	0xF00F0008
 #define IDM_NAV		0xF00F0007
 #define IDM_Exit 0xF00F0010
+#define IDM_VOL_ADJ	0xF00F4420
+#define IDM_MUTE	0xF00F4410
 #define IDM_GONNAMIN 0xF00F0444
 
 /**

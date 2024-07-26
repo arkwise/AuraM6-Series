@@ -62,6 +62,7 @@ $(OBJ_DIR)/xapps/imgor.o \
 $(OBJ_DIR)/xapps/run.o \
 $(OBJ_DIR)/xapps/ttt.o \
 $(OBJ_DIR)/xapps/setup.o \
+$(OBJ_DIR)/xapps/canvas.o\
 $(OBJ_DIR)/xapps/welcome.o \
 $(OBJ_DIR)/xapps/snake.o \
 $(OBJ_DIR)/xapps/mines.o \
@@ -74,7 +75,8 @@ $(OBJ_DIR)/xapps/login.o \
 $(OBJ_DIR)/xapps/myip.o \
 $(OBJ_DIR)/xapps/htmlget.o \
 $(OBJ_DIR)/xapps/xtheme.o \
-$(OBJ_DIR)/xapps/mbox.o
+$(OBJ_DIR)/xapps/mbox.o 
+#
 #$(OBJ_DIR)/xapps/ping.o \
 #$(OBJ_DIR)/xapps/convmpeg.o \
 #$(OBJ_DIR)/xdev/stars.o \
@@ -113,6 +115,7 @@ bin/xapps/imgor.app \
 bin/xapps/run.app \
 bin/xapps/ttt.app \
 bin/xapps/setup.app \
+bin/xapps/canvas.app \
 bin/xapps/welcome.app \
 bin/xapps/snake.app \
 bin/xapps/mines.app \
@@ -576,6 +579,9 @@ bin/xapps/o3pad.app: $(OBJ_DIR)/xapps/o3pad.o
 bin/xapps/setup.app: $(OBJ_DIR)/xapps/setup.o res/setup.res
 	$(DYNLDLNK) -Rres/setup.res bin/xapps/setup.app $(OBJ_DIR)/xapps/setup.o
 
+bin/xapps/canvas.app: $(OBJ_DIR)/xapps/canvas.o res/canvas.res
+	$(DYNLDLNK) -Rres/canvas.res bin/xapps/canvas.app $(OBJ_DIR)/xapps/canvas.o
+
 bin/xapps/imgor.app: $(OBJ_DIR)/xapps/imgor.o res/imgor.res
 	$(DYNLDLNK) -Rres/imgor.res bin/xapps/imgor.app $(OBJ_DIR)/xapps/imgor.o
 
@@ -608,6 +614,9 @@ bin/xlib/prevscr.dl: $(OBJ_DIR)/xlib/prevscr.o res/prvscr.res
 
 bin/xlib/cp.dl: $(OBJ_DIR)/xlib/cp.o res/cp.res
 	$(DYNLDLNK) -Rres/cp.res bin/xlib/cp.dl $(OBJ_DIR)/xlib/cp.o
+
+bin/xapps/desktop.app: $(OBJ_DIR)/xapps/desktop.o res/login.res
+	$(DYNLDLNK) -Rres/desktop.res bin/xapps/desktop.app $(OBJ_DIR)/xapps/desktop.o
 
 bin/xlib/widget.dl: $(OBJ_DIR)/xlib/widget.o $(OBJ_DIR)/xlib/widget/iwidget.o $(OBJ_DIR)/xlib/widget/wclass.o $(OBJ_DIR)/xlib/widget/spliter.o
 	$(DYNLDLNK) bin/xlib/widget.dl $(OBJ_DIR)/xlib/widget.o $(OBJ_DIR)/xlib/widget/iwidget.o $(OBJ_DIR)/xlib/widget/wclass.o $(OBJ_DIR)/xlib/widget/spliter.o

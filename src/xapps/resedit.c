@@ -17,16 +17,11 @@
 #include "label.h"
 #include "tbox.h"
 #include "iodlg.h"
+#include "resource.h" // Include resource header
 
 /*
 001 fixed menu generation errors
-
-
-
-
 */
-
-
 
 l_ulong AppVersion = ULONG_ID(0,0,0,1);
 char AppName[] = "Resource file editor";
@@ -102,7 +97,7 @@ l_bool AppEventHandler(PWidget o, PEvent Ev)
                 if (ActualRes) FreeList(ActualRes);
                 EmptySubTreeItems(t->Items);
 
-                ActualRes = LoadResourceFile(file);
+                ActualRes = LoadRessourceFile(file); // Use the correct function
                 if (ActualRes && ActualRes->Last) {
                     a = b = ActualRes->Last->Next;
                     do {
@@ -125,7 +120,7 @@ l_bool AppEventHandler(PWidget o, PEvent Ev)
         {
             if (ActualRes) {
                 if (File) {
-                    SaveResourceFile(File, ActualRes);
+                    SaveRessourceFile(File, ActualRes); // Use the correct function
                     return true;
                 }
             }
@@ -136,7 +131,7 @@ l_bool AppEventHandler(PWidget o, PEvent Ev)
             if (ActualRes) {
                 l_text file = IOBox("Save resource file", IOBOX_SAVE, NULL, Filter1, false);
                 if (file) {
-                    SaveResourceFile(file, ActualRes);
+                    SaveRessourceFile(file, ActualRes); // Use the correct function
                     WindowSetCaption(w, "Resource file editor - %s", file);
                     if (File) free(File);
                     File = TextDup(file);
@@ -296,8 +291,7 @@ void GenerateSubMenu(PMenuItem itm, void* Args)
     }
 }
 
-
-
+////////////////////////////////////////////////////////////////////////////////
 l_int Main(int argc, l_text *argv)
 {
     TRect r; 
@@ -354,7 +348,7 @@ l_int Main(int argc, l_text *argv)
     // Load resource file if provided as an argument
     if (argc > 1) {
         if (ActualRes) FreeList(ActualRes);  // Ensure to free any existing resources
-        ActualRes = LoadResourceFile(argv[1]); //still an error here?
+        ActualRes = LoadRessourceFile(argv[1]);
         if (ActualRes && ActualRes->Last) {
             a = b = ActualRes->Last->Next;
             do {
@@ -381,4 +375,3 @@ void Close(void)
     if (Filter3) FreeFileTypes(Filter3);
 }
 ////////////////////////////////////////////////////////////////////////////////
-
