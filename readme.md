@@ -157,6 +157,42 @@ Menu2 = NewMenu(
                                                       NewMenuItemEx("Extra", NULL, 0, 0, NULL, &GenerateSubMenu, "SYSTEM/MENU/extra",
                                                                     NewMenuItem("About", NULL, IDM_NAV, 0, NULL, NULL)))))); 
 
+or
+
+
+PMenu Menu = NewMenu(
+    NewMenuItem("File", NULL, 0, 0,
+        NewMenu(  // Wrap submenu items in a NewMenu()
+            NewMenuItem("Open", NULL, MSG_OPENFILE, 0, NULL,
+            NewMenuItem("Save", NULL, MSG_SAVEFILE, 0, NULL,
+            NewMenuItemSeparator(
+            NewMenuItem("Import from allegro cfg", NULL, MSG_OPENALLEG, 0, NULL,
+            NewMenuItem("Export to allegro cfg", NULL, MSG_SAVEALLEG, 0, NULL,
+            NewMenuItemSeparator(
+            NewMenuItem("Exit", NULL, WM_CLOSE, 0, NULL, NULL)))))))
+        )
+    ),
+    NewMenuItem("Layout", NULL, 0, 0,
+        NewMenu(
+            NewMenuItem("Test", NULL, MSG_TEST, 0, NULL,
+            NewMenuItem("Restaure system layout", NULL, MSG_RESTAURE, 0, NULL, NULL))
+        )
+    ),
+    NewMenuItem("Help", NULL, 0, 0,
+        NewMenu(
+            NewMenuItem("About", NULL, WM_ABOUT, 0, NULL, NULL)
+        )
+    ),
+    NULL
+);
+PMenuItem NewMenuItem(
+    l_text Caption,
+    p_bitmap Icon,
+    l_ulong Message,
+    l_ulong Flags,
+    PMenu SubMenu,
+    PMenuItem Next
+);
 
 
 
